@@ -14,9 +14,13 @@ Objetivo: obter um dump de referência dos arquivos instalados a partir de um di
 
 ## Configuração do PS5 App Dumper
 
-- FSELF: desligado
-- Auto backport: desligado
-- Dump DLC: desligado
+- Decrypt executables: ligado (preservar também os executáveis originais, quando disponíveis no dump)
+- Write logs: ligado
+- PS4 split mode: Both (não se aplica a jogos de PS5)
+- Create FSELF files: desligado
+- Dump DLC along: desligado
+- Game title in folder names: ligado
+- SDK backport: desligado
 
 ## Procedimento
 
