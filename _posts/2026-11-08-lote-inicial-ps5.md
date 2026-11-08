@@ -1,6 +1,6 @@
 ---
 title: "Lote inicial PS5"
-date: "2026-11-08"
+date: "2026-11-08 12:00:00 -0300"
 ---
 
 Começando a organizar meus jogos aqui pelos de PS5 que são poucos:
