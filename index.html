@@ -1,0 +1,26 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title | escape }}</title>
+</head>
+<body>
+  <h1>{{ site.title | escape }}</h1>
+  <p>{{ site.description | escape }}</p>
+  <hr>
+  {% for post in site.posts %}
+    <article>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+      <p><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></p>
+      {{ post.content }}
+    </article>
+    <hr>
+  {% else %}
+    <p>Nenhum registro publicado ainda.</p>
+  {% endfor %}
+</body>
+</html>
