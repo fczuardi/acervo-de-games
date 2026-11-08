@@ -1,6 +1,6 @@
 ---
 title: "Protocolo para dump de referência v0.1.0"
-date: 2026-11-08 04:44:00 -0300
+date: 2026-11-08 16:44:00 -0300
 ---
 
 Objetivo: obter um dump de referência dos arquivos instalados a partir de um disco físico de PS5, sem atualizações baixadas da internet ou modificações destinadas à execução.
