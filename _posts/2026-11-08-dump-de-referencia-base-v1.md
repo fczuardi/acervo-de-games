@@ -1,5 +1,5 @@
 ---
-title: "Protocolo para dump de referência v0.2.0"
+title: "Protocolo para dump de referência v0.2.1"
 date: 2026-11-08 16:44:00 -0300
 ---
 
@@ -23,11 +23,12 @@ Objetivo: obter um dump de referência dos arquivos instalados a partir de um di
 1. Deletar qualquer instalação anterior do jogo, incluindo atualizações e DLCs.
 2. Desconectar o PS5 da internet.
 3. Reiniciar o aparelho e entrar na conta habitual para executar o jailbreak.
-4. Inserir o disco e aguardar a conclusão da instalação.
-5. Registrar a versão do jogo instalada e verificar se há conteúdo ainda pendente de instalação.
-6. Executar o PS5 App Dumper com as configurações acima.
-7. Registrar os detalhes do dump: nome da pasta, tamanho, quantidade de arquivos e hashes de alguns arquivos selecionados.
-8. Opcionalmente, preservar o log do processo, removendo informações pessoais, identificadores específicos do console e outros dados sensíveis antes da publicação.
+4. Inserir o disco e aguardar a cópia completa para o console, não apenas o estado "Pronto para jogar".
+5. Registrar a versão do jogo instalada e confirmar que não há conteúdo pendente de instalação (inclusive verificar se o dumper ainda indica `INSTALLING`).
+6. Abrir o jogo e aguardar a primeira tela interativa (por exemplo, ajuste de brilho, menu inicial ou "Press Start"), sem iniciar uma partida ou criar um save, se possível.
+7. Deixar o jogo em execução e iniciar o dump pela interface do PS5 App Dumper com as configurações acima.
+8. Registrar os detalhes do dump: nome da pasta, tamanho, quantidade de arquivos e hashes de alguns arquivos selecionados.
+9. Opcionalmente, preservar o log do processo, removendo informações pessoais, identificadores específicos do console e outros dados sensíveis antes da publicação.
 
 ## Limitações
 
