@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} — {{ site.title | escape }}</title>
+</head>
+<body>
+  <p><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></p>
+  <h1>{{ page.title | escape }}</h1>
+  <p><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y-%m-%d" }}</time></p>
+
+  {{ content }}
+
+  <hr>
+  <footer>
+    <p><a href="https://github.com/fczuardi/acervo-de-games">Código-fonte</a> · <a href="https://github.com/fczuardi/acervo-de-games/blob/main/LICENSE">Licença GNU AGPL v3</a></p>
+  </footer>
+</body>
+</html>
