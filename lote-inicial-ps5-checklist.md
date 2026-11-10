@@ -9,9 +9,9 @@ Esta é minha lista de trabalho para levar até o fim a preservação dos oito j
 
 Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, considero concluído o ciclo mínimo quando preservei a instalação limpa do disco, a atualização oficial compatível, os fingerprints dos dois dumps e uma cópia de trabalho que consegui executar sem o disco.
 
-**Progresso obrigatório: 25 de 72 etapas — 34,7%.**
+**Progresso obrigatório: 28 de 72 etapas — 38,9%.**
 
-<progress value="25" max="72">25 de 72</progress>
+<progress value="28" max="72">28 de 72</progress>
 
 `✅` concluído · `◐` em andamento ou aguardando conferência · `—` ainda não iniciado · `○` opcional
 
@@ -21,9 +21,9 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 | Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
 | Ratchet & Clank: Em Uma Outra Dimensão (`PPSA01473`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Elden Ring (`PPSA04610`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
-| Helldivers II (`PPSA01413`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
+| Helldivers II (`PPSA01413`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Marvel's Spider-Man 2 (`PPSA03016`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
-| Astro Bot (`PPSA21564`) | ✅ | — | — | ✅ | ◐ | — | — | — | — | ○ |
+| Astro Bot (`PPSA21564`) | ✅ | — | — | ✅ | ✅ | ◐ | — | — | — | ○ |
 | Death Stranding 2: On the Beach (`PPSA02015`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
 
 ## O que cada coluna quer dizer
@@ -41,11 +41,11 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 
 ## Estado das tarefas em andamento
 
-- **Astro Bot 01.019.000:** download em andamento. O manifesto tem a particularidade de misturar partes principais `JP9000-PPSA21559` com uma peça suplementar `UP9000-PPSA21564`; isso deve permanecer registrado sem normalização.
+- **Astro Bot 01.019.000:** download e verificação das dez partes concluídos. Ainda falta fechar o registro de aquisição e o manifesto agregado. O manifesto tem a particularidade de misturar partes principais `JP9000-PPSA21559` com uma peça suplementar `UP9000-PPSA21564`; isso deve permanecer registrado sem normalização.
 
 ## Próximo marco
 
-Fechar a preservação do PKG de Astro Bot. Depois disso, escolher um jogo ainda sem dump base e executar o ciclo desde a instalação limpa do disco.
+Fechar o registro do PKG de Astro Bot. Depois disso, escolher um jogo ainda sem dump base e executar o ciclo desde a instalação limpa do disco.
 
 Última atualização: 10 de novembro de 2026.
 
