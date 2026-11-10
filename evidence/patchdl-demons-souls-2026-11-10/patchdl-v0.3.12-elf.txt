@@ -1,0 +1,15 @@
+PATCHDL EXPERIMENT BINARY
+release=v0.3.12
+release_url=https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.12
+asset=patchdl_0.3.12.elf
+size=10459040 bytes
+sha256=a8aeb6039825188561b7346bb6f0c9244f72d7be1412dc7dd6c2bea0dd3f396a
+github_asset_digest_match=true
+format=ELF 64-bit LSB PIE executable, x86-64, dynamically linked, with debug_info, not stripped
+
+retained_usb_path=/mnt/usb0/Acervo/tools/PatchDL/v0.3.12/patchdl_0.3.12.elf
+temporary_import_path=/mnt/usb0/patchdl_0.3.12.elf
+
+The root-level copy exists only so Payload Manager's USB import can discover
+the binary. It may be removed after a successful import. The organized copy
+under Acervo/tools is the retained copy.

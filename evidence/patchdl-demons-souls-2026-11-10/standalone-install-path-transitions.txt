@@ -1,0 +1,6 @@
+PS5 TITLE PATH TRANSITIONS
+started=2026-11-10T15:04:25.028-03:00
+title_id=PPSA01342
+method=FTP MLST existence checks; no file content read
+2026-11-10T15:04:25.057-03:00 /user/app/PPSA01342=absent /user/patch/PPSA01342=absent /user/appmeta/PPSA01342=absent
+2026-11-10T15:05:03.329-03:00 /user/app/PPSA01342=absent /user/patch/PPSA01342=absent /user/appmeta/PPSA01342=present

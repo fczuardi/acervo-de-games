@@ -1,0 +1,50 @@
+PS5 FILESYSTEM SNAPSHOT — PRE-UNINSTALL ATTEMPT
+captured_at_local=2026-11-10T13:29:16-03:00
+title_id=PPSA01342
+method=read-only FTP directory listings and retrieval of three small metadata files
+
+PATH EXISTENCE
+/user/app/PPSA01342/                         present
+/user/patch/                                 absent (FTP 550)
+/user/patch/PPSA01342/                       consequently absent
+/user/appmeta/PPSA01342/                     present
+/mnt/ext0/user/{app,patch,appmeta}/           absent (FTP 550)
+/mnt/ext1/user/app/PPSA01342/                 absent (FTP 550)
+/mnt/ext1/user/{patch,appmeta}/               absent (FTP 550)
+/mnt/usb0/user/{app,patch,appmeta}/           absent (FTP 550)
+
+/user/app/PPSA01342/ — FIRST LEVEL
+icon0.png       regular file   496766 bytes
+mount.lnk       regular file   51 bytes
+mount_img.lnk   regular file   52 bytes
+sce_sys/        directory
+
+/user/appmeta/PPSA01342/ — FIRST LEVEL
+icon0.dds       regular file   262292 bytes
+icon0.png       regular file   496766 bytes
+param.json      regular file   4121 bytes
+pic0.dds        regular file   8294548 bytes
+pic0.png        regular file   12797933 bytes
+pic1.dds        regular file   8294548 bytes
+pic1.png        regular file   12358849 bytes
+pic2.dds        regular file   8294548 bytes
+pic2.png        regular file   370266 bytes
+snd0.at9        regular file   1789540 bytes
+
+SELECTED METADATA
+content_version=01.007.000
+master_version=01.00
+content_id=UP9000-PPSA01342_00-DEMONSSOULS00000
+application_category_type=0
+mount_target=/mnt/shadowmnt/[Demon's Souls]-[PPSA01342]_[sanitized]
+image_target=/mnt/ext1/homebrew/[Demon's Souls]-[PPSA01342].ffpkg
+
+INTERPRETATION
+The currently registered application is a ShadowMount working image on the
+external M.2 volume. It is not an official disc base plus retail update
+installation. This snapshot must not be used as the baseline for the proposed
+PatchDL replacement experiment.
+
+No game-content file was downloaded. Only mount.lnk, mount_img.lnk and the
+appmeta param.json were read; this evidence file retains only selected fields.
+The internal shadow-mount identifier was deliberately omitted.

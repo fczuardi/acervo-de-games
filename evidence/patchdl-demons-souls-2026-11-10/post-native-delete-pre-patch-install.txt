@@ -1,0 +1,24 @@
+PS5 FILESYSTEM SNAPSHOT — AFTER NATIVE DELETE, BEFORE PATCH INSTALL
+captured_at_local=2026-11-10T14:59:52-03:00
+title_id=PPSA01342
+action_reported=PS5 home screen: select official disc installation, Options, Delete
+method=read-only FTP existence and directory listing
+
+/user/app/PPSA01342/       absent (FTP 550)
+/user/patch/               absent (FTP 550)
+/user/patch/PPSA01342/     consequently absent
+/user/appmeta/PPSA01342/   absent (FTP 550)
+
+PATCHDL DOWNLOAD RETAINED
+/data/patchdl/PPSA01342/UP9000-PPSA01342_00-DEMONSSOULS00000.crc   3284016 bytes
+/data/patchdl/PPSA01342/UP9000-PPSA01342_00-DEMONSSOULS00000.json  3695 bytes
+/data/patchdl/PPSA01342/UP9000-PPSA01342_00-DEMONSSOULS00000.pkg   53805318144 bytes
+/data/patchdl/PPSA01342/state.json                                  335 bytes
+
+INTERPRETATION
+The native PS5 Delete action removed the clean physical-disc installation and
+its appmeta while leaving PatchDL's completed, verified download intact. This
+is the controlled no-base state for the standalone retail update installation.
+
+The uninstall was performed by the native PS5 UI, not PatchDL's automatic
+replace path.

@@ -1,0 +1,7 @@
+scripts/__pycache__/
+
+# Private console sidecars retained locally for the PatchDL experiment.
+# They include binary package metadata and direct Sony distribution URLs.
+evidence/patchdl-demons-souls-2026-11-10/failed-standalone-install-no-disc/param.json
+evidence/patchdl-demons-souls-2026-11-10/sidecars-disc-base-01.000.000/
+evidence/patchdl-demons-souls-2026-11-10/sidecars-patchdl-download-01.007.000/

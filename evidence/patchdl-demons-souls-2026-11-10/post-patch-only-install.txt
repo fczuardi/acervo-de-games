@@ -1,0 +1,118 @@
+PS5 FILESYSTEM SNAPSHOT — COMPLETED PATCH-ONLY INSTALLATION
+captured_at_local=2026-11-10T15:24:59-03:00
+title_id=PPSA01342
+method=read-only FTP directory listings and selected small metadata
+disc_state=ejected throughout installation and this inspection
+
+PATH EXISTENCE
+/user/app/PPSA01342/                         present, mode drwxrwx---
+/user/patch/                                 absent (FTP 550)
+/user/patch/PPSA01342/                       consequently absent
+/user/appmeta/PPSA01342/                     present, mode drwx------
+/mnt/ext0/user/{app,patch,appmeta}/           absent (FTP 550)
+/mnt/ext1/user/app/PPSA01342/                 absent (FTP 550)
+/mnt/ext1/user/{patch,appmeta}/               absent (FTP 550)
+/mnt/usb0/user/{app,patch,appmeta}/           absent (FTP 550)
+
+/user/app/PPSA01342/ — FIRST LEVEL
+app.crc         regular file   3284016 bytes
+app.json        regular file   2707 bytes
+app.pbm         regular file   102914 bytes
+app.pbm.backup  regular file   102914 bytes
+app.pkg         regular file   53805318144 bytes
+app.xml         regular file   1270 bytes
+
+/user/app/PPSA01342/sce_sys/                  absent (FTP 550)
+
+/user/appmeta/PPSA01342/ — FIRST LEVEL
+icon0.dds               regular file   262292 bytes
+icon0.png               regular file   496766 bytes
+param.json              regular file   4123 bytes
+pic0.dds                regular file   8294548 bytes
+pic0.png                regular file   12797933 bytes
+pic1.dds                regular file   8294548 bytes
+pic2.dds                regular file   8294548 bytes
+playgo-scenario.json    regular file   2885 bytes
+snd0.at9                regular file   1789540 bytes
+
+SELECTED PARAM METADATA
+title_id=PPSA01342
+content_version=01.007.000
+master_version=01.00
+content_id=UP9000-PPSA01342_00-DEMONSSOULS00000
+application_category_type=0
+installation_location=internal console storage (/user/app)
+mount_link=absent
+mount_image_link=absent
+
+APP PACKAGE LAYOUT METADATA
+original_file_size=53805318144
+number_of_split_files=14
+pieces_sum_to_original_file_size=true
+package_digest=7199D8EE8C956C592BAB6DFFA44D7DDDBB2FA2E6933A0856844FBE468B7FE0E3
+playgo_chunk_crc_hash_value=5808BC2F7D9D1A2F1546C3EA9094EA88CE47F126E26C6C5EA5914A9573DD604B
+piece_source=http://127.0.0.1:12880/api/pkg/PPSA01342/...
+
+SMALL METADATA FILES READ
+a23b5b8a2117aa816d9fb826c05aa1f733fb4d49a557681aa55bf2712819e609  appmeta/param.json
+59f2d1b0251efe091fc5791221bb4b030c5fa161b663b3330190125c603edcf8  app/app.json
+32e02d036eb69f3868c7d729884494efb4b42bfbe4b30ade3bc23fdd89fde883  app/app.xml
+
+OBSERVED INSTALLATION RESULT
+PatchDL served the official 01.007.000 retail update package to the native
+installer while the physical disc was ejected and no 01.000.000 installation
+was present. The native installer completed and emitted the ready-to-play
+notification. The resulting registration is a complete app.pkg under
+/user/app rather than a separate object under /user/patch.
+
+This snapshot establishes completed installation and filesystem layout. It
+does not yet establish launch behavior, license enforcement, full playability,
+or whether inserting the disc will trigger a base-disc copy.
+
+FIRST LAUNCH TEST — DISC EJECTED
+The native shell refused to start the installed application and displayed:
+
+    Can't use this content.
+    Can't connect to the server to verify your license. Wait a while, and then
+    try again. [OK]
+
+The message did not ask for the physical disc. In this disc-ejected condition,
+the patch-only registration therefore followed an online-license verification
+path. This observation does not yet establish whether inserting the matching
+disc can satisfy the license locally.
+
+DISC INSERTION TEST
+After acknowledging the license error and inserting the matching physical
+disc, the shell changed the action immediately to "Play Game". No disc-copy,
+download or base-installation progress appeared before the action became
+available. This demonstrates that the matching disc was accepted as a local
+license for the patch-only 01.007.000 installation without first restoring the
+01.000.000 base package.
+
+LAUNCH AND GAMEPLAY TEST — MATCHING DISC INSERTED
+The application started successfully, reached its start screen, offered the
+existing save through "Continue", loaded Gates of Boletaria, and allowed
+normal gameplay there. No copy or download was observed before launch.
+
+This demonstrates successful initial execution, save discovery/loading and a
+short gameplay sample from the patch-only 01.007.000 installation with the
+matching physical disc providing the local license. It is not a claim of
+complete playability or exhaustive testing of every game subsystem.
+
+POST-LAUNCH FILESYSTEM CHECK
+The same read-only FTP inspection was repeated after closing the game. The
+installation layout and all observed first-level file sizes were unchanged:
+
+- `/user/app/PPSA01342/app.pkg` remained 53805318144 bytes;
+- `/user/patch/PPSA01342/` remained absent;
+- `/user/appmeta/PPSA01342/` remained present;
+- `app.json`, `app.xml`, and appmeta `param.json` were byte-identical to the
+  copies read before launch, as established with `cmp` and their unchanged
+  SHA-256 values recorded above.
+
+No restoration of the 01.000.000 base package or creation of a separate patch
+registration was observed as a consequence of inserting the disc or running
+the game.
+
+No game-content file was downloaded or hashed. The 53.8 GB app.pkg was
+observed only through directory metadata.

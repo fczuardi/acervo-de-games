@@ -1,0 +1,39 @@
+PATCHDL STATE — BEFORE CONFIGURATION AND DOWNLOAD
+captured_from=read-only HTTP API
+patchdl_version=0.3.12
+firmware=13.60
+firmware_build=0x13600007
+dns_guard=Active
+resolver=Internal allowlist
+download_dir=/data/patchdl
+download_free_space_mb=480714
+
+TITLE
+title_id=PPSA01342
+name=Demon's Souls
+source=official
+source_path=/user/app/PPSA01342
+installed_version=01.000.000
+compatible_version=01.007.000
+latest_version=01.007.000
+downloaded=false
+resumable=false
+app_installed=true
+installed_base=01.000.000
+separate_patch_size=-1
+
+INITIAL SETTINGS — MUST CHANGE BEFORE DOWNLOAD
+install_after_download=true
+delete_pkg_after_install=true
+verify_downloads=false
+max_connections=4
+download_drive=/data
+
+REQUIRED EXPERIMENT SETTINGS
+install_after_download=false
+delete_pkg_after_install=false
+verify_downloads=true
+
+The raw diagnostic response was inspected but not retained because it includes
+direct distribution URLs and local network details. No state-changing API was
+called during this collection.

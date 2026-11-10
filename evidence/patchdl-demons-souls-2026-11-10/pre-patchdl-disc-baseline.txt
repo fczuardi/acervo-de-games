@@ -1,0 +1,67 @@
+PS5 FILESYSTEM SNAPSHOT — CLEAN PHYSICAL-DISC INSTALLATION
+captured_at_local=2026-11-10T14:06:34-03:00
+title_id=PPSA01342
+method=read-only FTP directory listings and selected small metadata
+
+PATH EXISTENCE
+/user/app/PPSA01342/                         present, mode drwxrwx---
+/user/patch/                                 absent (FTP 550)
+/user/patch/PPSA01342/                       consequently absent
+/user/appmeta/PPSA01342/                     present, mode drwx------
+/mnt/ext0/user/{app,patch,appmeta}/           absent (FTP 550)
+/mnt/ext1/user/app/PPSA01342/                 absent (FTP 550)
+/mnt/ext1/user/{patch,appmeta}/               absent (FTP 550)
+/mnt/usb0/user/{app,patch,appmeta}/           absent (FTP 550)
+
+/user/app/PPSA01342/ — FIRST LEVEL
+app.crc         regular file   3178928 bytes
+app.json        regular file   427 bytes
+app.pbm         regular file   99630 bytes
+app.pbm.backup  regular file   99630 bytes
+app.pkg         regular file   52083556352 bytes
+app.xml         regular file   1269 bytes
+
+/user/app/PPSA01342/sce_sys/                  absent (FTP 550)
+
+/user/appmeta/PPSA01342/ — FIRST LEVEL
+icon0.dds               regular file   262292 bytes
+icon0.png               regular file   496766 bytes
+param.json              regular file   3923 bytes
+pic0.dds                regular file   8294548 bytes
+pic0.png                regular file   12797933 bytes
+pic1.dds                regular file   8294548 bytes
+pic2.dds                regular file   8294548 bytes
+playgo-scenario.json    regular file   2885 bytes
+snd0.at9                regular file   1789540 bytes
+
+SELECTED PARAM METADATA
+content_version=01.000.000
+master_version=01.00
+content_id=UP9000-PPSA01342_00-DEMONSSOULS00000
+application_category_type=0
+installation_location=internal console storage (/user/app)
+mount_link=absent
+mount_image_link=absent
+
+APP PACKAGE LAYOUT METADATA
+original_file_size=52083556352
+number_of_split_files=2
+piece_0_size=51975028736
+piece_1_size=108527616
+pieces_sum_to_original_file_size=true
+package_digest=995F5BDD324D3F608D36B4BEC4B52AEF689CC053203379DFF8EE00ABE2055CEA
+playgo_chunk_crc_hash_value=C6DB498925B73BAD204701AF7AF558A7DB8CC4254B14DB7CD4A96DF9FD7CC0ED
+
+SMALL METADATA FILES READ
+080b8b0ac87fd00d030ad79d1953efc67527f3081c0bcb1f95273c6999115435  appmeta/param.json
+0701e8a4ede55b300a999be6b931a35d8ceff5f1c5ef527cdb291d8afd2b747c  app/app.json
+d7e206817c6ad31d79da78188fc5fee4d2312bd005d0e6f4fe00a6ca9b458b8f  app/app.xml
+
+INTERPRETATION
+This is the intended official clean-disc baseline. The PS5 installation is
+represented by app.pkg and small sidecars in /user/app, with presentation
+metadata in /user/appmeta. There is no separate /user/patch directory at this
+stage and no ShadowMount indirection.
+
+No game-content file was downloaded or hashed. The 52 GB app.pkg was observed
+only through directory metadata.

@@ -1,0 +1,25 @@
+PS5 FILESYSTEM CONTROL — AFTER DELETING SHADOWMOUNT ENTRY
+captured_at_local=2026-11-10T13:34:19-03:00
+title_id=PPSA01342
+action_reported=PS5 home screen: select game, Options, Delete
+method=read-only FTP existence checks
+
+/user/app/PPSA01342/       absent (FTP 550)
+/user/patch/               absent (FTP 550)
+/user/patch/PPSA01342/     consequently absent
+/user/appmeta/PPSA01342/   absent (FTP 550)
+
+INTERPRETATION
+The normal PS5 Delete action removed the registered ShadowMount application
+stub and its appmeta directory. This is an intermediate control, not the
+pre-replacement baseline for the official disc installation.
+
+RELOCATED WORKING IMAGE
+path=/mnt/usb0/Acervo/working-images/Demon's Souls - PPSA01342 - 01.007.000/[Demon's Souls]-[PPSA01342].ffpkg
+status=present
+size=57819987968 bytes
+ftp_last_modified=2026-11-10T17:30:35Z
+
+The FFPKG remained present after deleting the registered ShadowMount entry.
+The timestamp is observed FTP/filesystem metadata, not treated as a trusted
+creation time. The file content was not read or transferred.

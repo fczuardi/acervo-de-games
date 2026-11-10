@@ -1,0 +1,10 @@
+PATCHDL DOWNLOAD CONFIGURATION — CONFIRMED BY READ-ONLY API
+install_after_download=false
+delete_pkg_after_install=false
+verify_downloads=true
+max_connections=4
+download_drive=/data
+download_dir=/data/patchdl
+
+This configuration preserves a pause between verified download and installation
+so the replacement monitor can be prepared before any uninstall is requested.
