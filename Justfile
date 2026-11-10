@@ -1,5 +1,13 @@
 set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
 
+# Download through a safe .part file and validate size against our manifest.
+download-patch fetchpkg manifest output url:
+    python3 scripts/download_patch.py \
+      "{{ fetchpkg }}" \
+      "{{ manifest }}" \
+      "{{ output }}" \
+      "{{ url }}"
+
 # Fingerprint a retail patch and verify every Sony-manifest piece in one read.
 # Example:
 # just verify-patch "/run/media/fcz/PS5_DUMPS/Acervo/patches/Astro Bot - PPSA21564" astro-bot-01.019.000

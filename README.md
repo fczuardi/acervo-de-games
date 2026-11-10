@@ -20,7 +20,15 @@ O layout de cada entrada será definido quando publicarmos a primeira. O objetiv
 
 ## Ferramentas locais
 
-O `Justfile` reúne comandos repetidos durante o trabalho de preservação. Para calcular o SHA-256 completo de um retail PKG e verificar todas as partes descritas no manifesto da Sony durante a mesma leitura sequencial:
+O `Justfile` reúne comandos repetidos durante o trabalho de preservação. Para baixar um patch com o `fetchpkg`, sem sobrescrever silenciosamente um arquivo anterior:
+
+```bash
+just download-patch /caminho/fetchpkg /caminho/manifest.json /destino/patch.pkg 'URL'
+```
+
+O download é gravado primeiro como `patch.pkg.part`. Como o `fetchpkg` não retoma downloads interrompidos, a receita recusa arquivos parciais ou finais preexistentes. Depois do sucesso, ela confere o tamanho contra o manifesto, renomeia o arquivo e cria `patch.acquisition.json` com metadados da aquisição e da ferramenta, mas sem reter a URL completa.
+
+Para calcular o SHA-256 completo de um retail PKG e verificar todas as partes descritas no manifesto da Sony durante a mesma leitura sequencial:
 
 ```bash
 just verify-patch "/caminho/da/pasta-do-jogo" nome-base-do-patch
