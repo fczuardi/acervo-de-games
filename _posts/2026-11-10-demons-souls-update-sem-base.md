@@ -3,23 +3,25 @@ title: "Demon's Souls 01.007.000 instalado sem a base do disco"
 date: 2026-11-10 15:30:00 -0300
 ---
 
-Hoje fiz um experimento para entender melhor o que acontece quando o PatchDL substitui uma instalação de disco por um update oficial de PS5.
+Hoje fiz um experimento para entender se uma instalação de disco pode ser substituída por um update oficial de PS5 usado sozinho.
 
 Usei novamente Demon's Souls, `PPSA01342`, no firmware 13.60. O retail PKG `01.007.000` já estava preservado e verificado. A pergunta era simples: esse pacote depende dos arquivos da versão `01.000.000` instalada pelo disco ou consegue ocupar sozinho o lugar da aplicação?
 
 ## Preparação
 
-Antes de mexer na instalação, revisei o código do PatchDL v0.3.12. Para jogos de PS5, o fluxo de substituição previsto pelo projeto remove a aplicação inteira, espera ela desaparecer e depois instala o pacote baixado. O próprio README do projeto diz que o disco continua sendo usado como licença.
+Antes de mexer na instalação, revisei o código do PatchDL v0.3.12. Para jogos de PS5, o projeto possui um fluxo de substituição que remove a aplicação inteira, espera ela desaparecer e depois instala o pacote baixado. O próprio README diz que o disco continua sendo usado como licença.
 
 Também registrei por FTP o estado da instalação limpa do disco. Ela aparecia em `/user/app/PPSA01342/`, com um `app.pkg` de 52.083.556.352 bytes. Não existia uma pasta correspondente em `/user/patch/`.
 
-Baixei o update pelo PatchDL e, para deixar o teste bem separado, removi a instalação-base pela própria interface do PS5. Conferi então que `/user/app/PPSA01342/`, `/user/patch/PPSA01342/` e `/user/appmeta/PPSA01342/` tinham desaparecido. O PKG baixado pelo PatchDL continuava guardado em `/data/patchdl/`.
+Mas esse não foi o fluxo que a interface ofereceu para Demon's Souls naquele estado. Depois do download, o único botão disponível era **Instalar**. Antes de usá-lo, conferi os metadados internos apresentados pelo PatchDL: a base instalada e a base esperada pelo pacote eram ambas `01.000.000`, e `base_fits` estava como verdadeiro. Portanto, aquele botão seguiria a instalação normal do update sobre uma base considerada compatível; ele não chamaria a rotina de substituição com exclusão que eu queria observar.
+
+Por isso removi deliberadamente a instalação-base pela própria interface nativa do PS5. Não foi uma tentativa de imitar às cegas o PatchDL: foi uma forma de separar as duas operações e estabelecer, por inspeção, a condição inicial do experimento. Depois do **Delete**, conferi por FTP que `/user/app/PPSA01342/`, `/user/patch/PPSA01342/` e `/user/appmeta/PPSA01342/` tinham desaparecido. O PKG já baixado pelo PatchDL continuava guardado em `/data/patchdl/`.
 
 O disco ficou ejetado durante toda a instalação seguinte.
 
 ## Instalação somente do update
 
-Com a base ausente, o PatchDL ofereceu instalar diretamente a versão `01.007.000`.
+Com a base ausente e depois de reiniciar o programa para ele reler o estado do console, o PatchDL passou a mostrar Demon's Souls como não instalado e ofereceu **Instalar 01.007.000**. Foi esse botão, agora sem uma base presente, que usei.
 
 A primeira tentativa falhou com `NW-102261-2`. O instalador nativo dizia que não conseguia se conectar ao servidor. A inspeção mostrou que o PatchDL serve localmente as partes do PKG por `127.0.0.1:12880` e que esse servidor havia parado de responder. Depois de abrir novamente o PatchDL e escolher **Try Again**, a cópia prosseguiu normalmente.
 
@@ -59,6 +61,8 @@ Para esta versão de Demon's Souls:
 5. o jogo iniciou, carregou um save e permitiu gameplay sem reinstalar a base.
 
 Isso não prova jogabilidade completa, nem permite generalizar o comportamento para todo update de PS5. É o resultado observado neste pacote, neste jogo e neste firmware.
+
+Também não testei, nesta execução, a rotina automática de substituição do PatchDL de ponta a ponta. Revisei seu funcionamento no código, mas a remoção efetiva da base foi feita pela interface nativa do PS5 porque o botão inicialmente oferecido pelo PatchDL faria uma atualização normal sobre a base compatível.
 
 Guardei no repositório as pequenas evidências textuais do experimento: revisão do fluxo do PatchDL, estados do filesystem, hashes dos metadados e o registro da falha intermediária. O PKG, arquivos do jogo, licenças e URLs de distribuição não são publicados.
 

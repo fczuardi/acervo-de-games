@@ -33,3 +33,19 @@ Relevant source locations in this revision:
 - `README.md:95` — disc remains the license after PS5 replacement.
 
 No PatchDL operation was invoked during this review.
+
+## Distinction from the executed experiment
+
+The automatic replacement path described above was not invoked in the
+subsequent Demon's Souls experiment. After the package download, the UI offered
+only **Install**. The inspected package metadata reported the installed base
+and expected package base as `01.000.000`, with `base_fits` true, so that action
+would perform the normal update install over a compatible base rather than
+enter `do_replace_install()`.
+
+To establish an unambiguous patch-only starting condition, the base application
+was therefore deleted through the native PS5 UI. Its absence was confirmed by
+read-only FTP inspection before PatchDL was restarted and offered **Install
+01.007.000** for the now-uninstalled title. The experiment demonstrates the
+result of installing that orphaned update package; it does not demonstrate the
+automatic replacement routine end to end.
