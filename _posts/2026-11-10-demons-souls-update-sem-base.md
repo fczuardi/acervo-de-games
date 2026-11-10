@@ -1,6 +1,6 @@
 ---
 title: "Demon's Souls 01.007.000 instalado sem a base do disco"
-date: 2026-11-10 17:00:00 -0300
+date: 2026-11-10 15:30:00 -0300
 ---
 
 Hoje fiz um experimento para entender melhor o que acontece quando o PatchDL substitui uma instalação de disco por um update oficial de PS5.
