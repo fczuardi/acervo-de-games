@@ -18,7 +18,7 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 | Jogo | Inv. | Dump base | FP base | Manifesto update | PKG | FP PKG | Dump atualizado | FP atualizado | Working copy | FP working |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Demon's Souls (`PPSA01342`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ |
-| Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
+| Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | — | — | ✅ | ◐ | — | — | — | — | ○ |
 | Ratchet & Clank: Em Uma Outra Dimensão (`PPSA01473`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Elden Ring (`PPSA04610`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
 | Helldivers II (`PPSA01413`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
@@ -41,11 +41,13 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 
 ## Estado das tarefas em andamento
 
+- **Marvel's Spider-Man: Miles Morales 01.015.001:** download do retail PKG em andamento. O arquivo permanece com a extensão `.pkg.part` até o tamanho final ser conferido contra o manifesto.
 - **Astro Bot 01.019.000:** download e verificação das dez partes concluídos. Ainda falta fechar o registro de aquisição e o manifesto agregado. O manifesto tem a particularidade de misturar partes principais `JP9000-PPSA21559` com uma peça suplementar `UP9000-PPSA21564`; isso deve permanecer registrado sem normalização.
+- **Helldivers II 01.007.101:** PKG e fingerprint concluídos. Os dumps base e atualizado e a working copy foram adiados conscientemente por causa da dependência do serviço online e da prioridade de títulos mais autônomos da fila.
 
 ## Próximo marco
 
-Fechar o registro do PKG de Astro Bot. Depois disso, escolher um jogo ainda sem dump base e executar o ciclo desde a instalação limpa do disco.
+Concluir e fingerprintar o PKG de Miles Morales, fechar o registro do Astro Bot e baixar os patches restantes enquanto o HD está conectado ao computador. A ordem prevista depois de Miles Morales é Elden Ring, Death Stranding 2 e Marvel's Spider-Man 2.
 
 Última atualização: 10 de novembro de 2026.
 
