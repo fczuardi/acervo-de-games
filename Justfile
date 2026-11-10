@@ -17,6 +17,13 @@ verify-patch patch_dir stem:
       "{{ patch_dir }}/{{ stem }}.pkg" \
       "{{ patch_dir }}/{{ stem }}.pieces.sha256.tsv" \
       "{{ patch_dir }}/{{ stem }}.verification.json"
+    python3 scripts/finalize_patch.py "{{ patch_dir }}" "{{ stem }}"
+
+# Migrate a former monolithic record and rebuild the aggregate manifest.
+migrate-patch-record legacy_record:
+    python3 scripts/migrate_patch_record.py "{{ legacy_record }}" --remove-legacy
+    stem="$(basename "{{ legacy_record }}" .preservation.json)"; \
+      python3 scripts/finalize_patch.py "$(dirname "{{ legacy_record }}")" "$stem"
 
 # Verify the retained checksum of a small Sony manifest without reading the PKG.
 check-patch-manifest patch_dir stem:
