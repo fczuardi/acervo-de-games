@@ -67,3 +67,46 @@ registro de aquisição. Ela continua presente no manifesto Sony original,
 mantido em privado; o registro público conserva apenas seu SHA-256 e basename.
 
 Os scripts não contêm jogos, chaves, URLs de distribuição ou outros dados do acervo privado.
+
+Para gerar os dois manifestos de um dump na mesma passagem ordenada, mantendo
+os resultados fora da árvore extraída:
+
+```bash
+just dump-manifests /caminho/da/pasta-extraida /caminho/dos-sidecars TITLE-VERSION
+```
+
+A receita exclui `sce_sys/`, usa ordenação binária equivalente a `LC_ALL=C`,
+recusa nomes incompatíveis com TSV, escreve primeiro arquivos `.tmp` e só
+publica os dois manifestos depois de conferir suas quantidades de entradas.
+Um lock impede duas execuções simultâneas para o mesmo stem. Se a execução for
+interrompida, uma repetição com `--replace` aceita o SHA-256 temporário somente
+quando ele é um prefixo ordenado válido ou quando suas linhas completas cobrem
+exatamente o conjunto atual de caminhos, sem hashes conflitantes.
+
+Downloads longos também podem ser feitos diretamente a partir do manifesto,
+com retomada e verificação por peça:
+
+```bash
+just download-patch-resumable manifesto.json patch.pkg
+```
+
+Para deixar explícito o caso de PS4, existe o alias equivalente:
+
+```bash
+just download-patch-ps4 manifesto.json patch.pkg
+```
+
+O downloader reconhece hashes SHA-1 de 40 caracteres, usados nos manifestos
+PS4 observados, e SHA-256 de 64 caracteres, usado nos manifestos PS5. Uma
+conexão interrompida retém somente a peça corrente para retomada; peças já
+montadas são verificadas antes da continuação. Cada invocação permite até dez
+retentativas usando o backoff exponencial padrão do `curl`, em vez de consultas
+em intervalo fixo. O SHA-256 do PKG completo
+continua sendo calculado depois por `just verify-patch`.
+
+O endpoint HTTPS `sgst.prod.dl.playstation.net` usa a raiz privada pública
+`SCEI DNAS Root 05`, também embutida no source do `fetchpkg`. O downloader
+fornece explicitamente essa raiz ao `curl` para manter a validação TLS; ele não
+usa `--insecure`. Como essa CA de 2004 é assinada com SHA-1, a exceção para
+esse host também limita TLS a 1.2 e reduz o nível de segurança do OpenSSL,
+mantendo ainda assim a verificação da cadeia e do hostname.

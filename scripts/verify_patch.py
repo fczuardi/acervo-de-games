@@ -12,6 +12,7 @@ from pathlib import Path
 
 
 BLOCK_SIZE = 16 * 1024 * 1024
+HASH_BY_LENGTH = {40: "sha1", 64: "sha256"}
 
 
 def write_atomic(path: Path, content: str) -> None:
@@ -26,6 +27,16 @@ def write_atomic(path: Path, content: str) -> None:
 def fail(message: str) -> None:
     print(f"error: {message}", file=sys.stderr)
     raise SystemExit(1)
+
+
+def piece_algorithm(piece: dict, index: int) -> str:
+    expected = piece.get("hashValue", "")
+    algorithm = HASH_BY_LENGTH.get(len(expected))
+    if algorithm is None or any(
+        character not in "0123456789abcdefABCDEF" for character in expected
+    ):
+        fail(f"piece {index} has an unsupported hashValue")
+    return algorithm
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -60,6 +71,7 @@ def main() -> None:
 
     expected_offset = 0
     for index, piece in enumerate(pieces):
+        piece_algorithm(piece, index)
         if piece["fileOffset"] != expected_offset:
             fail(
                 f"piece {index} begins at {piece['fileOffset']}; "
@@ -77,13 +89,14 @@ def main() -> None:
         )
 
     package_hash = hashlib.sha256()
-    actual_piece_hashes: list[str] = []
+    actual_piece_hashes: list[tuple[str, str]] = []
     bytes_read = 0
     started = time.monotonic()
 
     with args.package.open("rb", buffering=0) as package:
         for index, piece in enumerate(pieces):
-            piece_hash = hashlib.sha256()
+            algorithm = piece_algorithm(piece, index)
+            piece_hash = hashlib.new(algorithm)
             remaining = piece["fileSize"]
             while remaining:
                 block = package.read(min(BLOCK_SIZE, remaining))
@@ -95,7 +108,7 @@ def main() -> None:
                 remaining -= block_size
                 bytes_read += block_size
 
-            actual_piece_hashes.append(piece_hash.hexdigest())
+            actual_piece_hashes.append((algorithm, piece_hash.hexdigest()))
             elapsed = time.monotonic() - started
             rate = bytes_read / elapsed / (1024 * 1024)
             print(
@@ -108,9 +121,9 @@ def main() -> None:
         if package.read(1):
             fail("data found after expected end of PKG")
 
-    rows = ["index\toffset\tsize\texpected_sha256\tactual_sha256\tstatus\n"]
+    rows = ["index\toffset\tsize\thash_algorithm\texpected_hash\tactual_hash\tstatus\n"]
     matches = 0
-    for index, (piece, actual_hash) in enumerate(
+    for index, (piece, (algorithm, actual_hash)) in enumerate(
         zip(pieces, actual_piece_hashes, strict=True)
     ):
         expected_hash = piece["hashValue"].lower()
@@ -118,7 +131,7 @@ def main() -> None:
         matches += status == "ok"
         rows.append(
             f"{index}\t{piece['fileOffset']}\t{piece['fileSize']}\t"
-            f"{expected_hash}\t{actual_hash}\t{status}\n"
+            f"{algorithm}\t{expected_hash}\t{actual_hash}\t{status}\n"
         )
 
     if matches != len(pieces):
@@ -157,6 +170,9 @@ def main() -> None:
         "pieceVerification": {
             "reportFilename": args.report.name,
             "reportSha256": report_sha256,
+            "hashAlgorithms": sorted(
+                {algorithm for algorithm, _actual in actual_piece_hashes}
+            ),
             "piecesVerified": len(pieces),
             "matches": matches,
             "mismatches": 0,

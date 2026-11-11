@@ -8,6 +8,29 @@ download-patch fetchpkg manifest output url:
       "{{ output }}" \
       "{{ url }}"
 
+# Resume split Sony manifests safely. Complete leading pieces are verified;
+# only a trailing fragment that cannot match a manifest piece is discarded.
+download-patch-resumable manifest output:
+    python3 scripts/download_patch_resumable.py \
+      "{{ manifest }}" \
+      "{{ output }}" \
+      --discard-incomplete-tail
+
+# Named entry point for PS4 manifests (SHA-1 pieces, SHA-256 final record).
+download-patch-ps4 manifest output:
+    python3 scripts/download_patch_resumable.py \
+      "{{ manifest }}" \
+      "{{ output }}" \
+      --discard-incomplete-tail
+
+# Create matching SHA-256 and apparent-size manifests outside an extracted dump.
+dump-manifests game_dir output_dir stem *flags:
+    python3 scripts/create_dump_manifests.py \
+      "{{ game_dir }}" \
+      "{{ output_dir }}" \
+      "{{ stem }}" \
+      {{ flags }}
+
 # Fingerprint a retail patch and verify every Sony-manifest piece in one read.
 # Example:
 # just verify-patch "/run/media/fcz/PS5_DUMPS/Acervo/patches/Astro Bot - PPSA21564" astro-bot-01.019.000
