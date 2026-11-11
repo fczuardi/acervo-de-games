@@ -50,6 +50,24 @@ O jogo abriu, chegou à tela inicial, encontrou meu save e ofereceu **Continue**
 
 Depois de fechar o jogo, repeti a inspeção. O `app.pkg` continuava com 53.805.318.144 bytes, `/user/patch/PPSA01342/` continuava ausente e os pequenos arquivos `app.json`, `app.xml` e `param.json` estavam idênticos aos lidos antes da execução. Inserir o disco e jogar não restaurou a base `01.000.000`.
 
+## Dump da instalação patch-only
+
+Depois desse teste, usei o PS5 App Dumper v2.10 para extrair também a instalação patch-only. Mantive a mesma configuração dos dumps anteriores: modo FLAT, descriptografia ligada, conversão para FSELF desligada e sem backport.
+
+O processo levou 2h03m30s. O dumper registrou 88.025.089.248 bytes e terminou com estado `done`. A árvore resultante contém 223.265 arquivos regulares, somando 88.040.148.641 bytes aparentes.
+
+Gerei os manifestos SHA-256 e de tamanhos seguindo o [protocolo de preservação v0.3.0](https://fczuardi.github.io/acervo-de-games/2026/11/08/dump-de-referencia-base-v1.html), novamente excluindo `sce_sys/`. Os dois conjuntos, com 223.238 caminhos, ficaram byte a byte idênticos aos manifestos do dump `01.007.000` obtido anteriormente a partir da instalação convencional base+update:
+
+- manifesto SHA-256: `f78516ad791e595fddc6ca6cab25c9a75dbf496a360cf1f5fa38a209431a88fb`;
+- manifesto de tamanhos: `b6a6d48b3adde38ee81dbecd465f83dcb38784c932976d3f21a7175aaf81b58e`;
+- `eboot.bin` descriptografado: `4a6ca8a2904d02a9ff11aebcb10379c89974cd9bff1a37e09c21a7e782447674`.
+
+Também comparei separadamente `sce_sys/`. Os 27 arquivos presentes nos dois dumps têm SHA-256 idêntico. A única diferença observada nas árvores completas foi `sce_sys/disc_info.dat`, com 6.640 bytes, presente no dump convencional e ausente no patch-only. Isso explica exatamente a diferença de um arquivo e 6.640 bytes entre as duas extrações.
+
+O arquivo é quase todo preenchido com zeros. No começo aparecem o Title ID, alguns inteiros e um bloco binário de 32 bytes que muda entre a base e o update. Encontrei a mesma estrutura, com outro Title ID e outro bloco binário, em um dump de Death Stranding Director's Cut vindo de disco e posteriormente comprimido com LZ4. Isso confirma que o formato não é particular de Demon's Souls, mas ainda não identifica com segurança o significado desses campos.
+
+O nome sugere que `disc_info.dat` registra informação ligada à instalação física, o que combina com o experimento. O resultado seguro é mais simples: no nível dos arquivos descriptografados pelo App Dumper, o conteúdo do jogo é igual; a única diferença encontrada está nesse metadado de `sce_sys`.
+
 ## O que ficou demonstrado
 
 Para esta versão de Demon's Souls:
@@ -58,9 +76,10 @@ Para esta versão de Demon's Souls:
 2. o resultado foi registrado como uma aplicação completa em `/user/app/`;
 3. sem o disco, o console tentou verificar uma licença online e não abriu o jogo;
 4. o disco físico foi aceito imediatamente como licença local;
-5. o jogo iniciou, carregou um save e permitiu gameplay sem reinstalar a base.
+5. o jogo iniciou, carregou um save e permitiu gameplay sem reinstalar a base;
+6. o dump descriptografado resultante é idêntico ao dump convencional fora de `sce_sys/`, e a única diferença na árvore completa é a ausência de `disc_info.dat`.
 
-Isso não prova jogabilidade completa, nem permite generalizar o comportamento para todo update de PS5. É o resultado observado neste pacote, neste jogo e neste firmware.
+Isso não prova jogabilidade completa, nem permite generalizar o comportamento para todo update de PS5. A igualdade dos dumps também não significa que os registros internos das duas instalações sejam iguais. É o resultado observado neste pacote, neste jogo e neste firmware.
 
 Também não testei, nesta execução, a rotina automática de substituição do PatchDL de ponta a ponta. Revisei seu funcionamento no código, mas a remoção efetiva da base foi feita pela interface nativa do PS5 porque o botão inicialmente oferecido pelo PatchDL faria uma atualização normal sobre a base compatível.
 
