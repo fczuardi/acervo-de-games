@@ -9,22 +9,22 @@ Esta é minha lista de trabalho para levar até o fim a preservação dos oito j
 
 Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, considero concluído o ciclo mínimo quando preservei a instalação limpa do disco, a atualização oficial compatível, os fingerprints dos dois dumps e uma cópia de trabalho que consegui executar sem o disco.
 
-**Progresso obrigatório: 33 de 72 etapas — 45,8%.**
+**Progresso obrigatório: 37 de 72 etapas — 51,4%.**
 
-<progress value="33" max="72">33 de 72</progress>
+<progress value="37" max="72">37 de 72</progress>
 
 `✅` concluído · `◐` em andamento ou aguardando conferência · `—` ainda não iniciado · `○` opcional
 
 | Jogo | Inv. | Dump base | FP base | Manifesto update | PKG | FP PKG | Dump atualizado | FP atualizado | Working copy | FP working |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Demon's Souls (`PPSA01342`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ |
+| Demon's Souls (`PPSA01342`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Ratchet & Clank: Em Uma Outra Dimensão (`PPSA01473`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Elden Ring (`PPSA04610`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Helldivers II (`PPSA01413`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
-| Marvel's Spider-Man 2 (`PPSA03016`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
+| Marvel's Spider-Man 2 (`PPSA03016`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Astro Bot (`PPSA21564`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
-| Death Stranding 2: On the Beach (`PPSA02015`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
+| Death Stranding 2: On the Beach (`PPSA02015`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 
 ## O que cada coluna quer dizer
 
@@ -41,12 +41,15 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 
 ## Estado das tarefas em andamento
 
+- **Demon's Souls 01.007.000:** fingerprint SHA-256 da imagem de trabalho final concluído. O payload do dump atualizado foi convertido em tombstone após a comparação com o dump patch-only demonstrar conteúdo idêntico fora de `sce_sys/`; os manifestos, metadados e logs foram preservados.
+- **Death Stranding 2 01.015.000:** PKG e fingerprint concluídos; as 23 partes do manifesto foram verificadas e o conjunto de preservação foi finalizado.
+- **Marvel's Spider-Man 2 01.005.001:** PKG e fingerprint concluídos; as 27 partes do manifesto foram verificadas e o conjunto de preservação foi finalizado.
 - **Elden Ring 01.018.001:** PKG e fingerprint concluídos; o conjunto preservado contém registro de aquisição, verificação por partes e checksums agregados.
 - **Helldivers II 01.007.101:** PKG e fingerprint concluídos. Os dumps base e atualizado e a working copy foram adiados conscientemente por causa da dependência do serviço online e da prioridade de títulos mais autônomos da fila.
 
 ## Próximo marco
 
-Baixar e fingerprintar os patches restantes enquanto o HD está conectado ao computador. A ordem prevista é Death Stranding 2 e Marvel's Spider-Man 2.
+Retomar no PS5 os dumps base e atualizado dos títulos físicos, priorizando jogos autônomos que possam ser testados offline.
 
-Última atualização: 17 de novembro de 2026.
+Última atualização: 18 de novembro de 2026.
 
