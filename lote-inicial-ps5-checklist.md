@@ -9,9 +9,9 @@ Esta é minha lista de trabalho para levar até o fim a preservação dos oito j
 
 Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, considero concluído o ciclo mínimo quando preservei a instalação limpa do disco, a atualização oficial compatível, os fingerprints dos dois dumps e uma cópia de trabalho que consegui executar sem o disco.
 
-**Progresso obrigatório: 31 de 72 etapas — 43,1%.**
+**Progresso obrigatório: 33 de 72 etapas — 45,8%.**
 
-<progress value="31" max="72">31 de 72</progress>
+<progress value="33" max="72">33 de 72</progress>
 
 `✅` concluído · `◐` em andamento ou aguardando conferência · `—` ainda não iniciado · `○` opcional
 
@@ -20,7 +20,7 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 | Demon's Souls (`PPSA01342`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ○ |
 | Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Ratchet & Clank: Em Uma Outra Dimensão (`PPSA01473`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
-| Elden Ring (`PPSA04610`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
+| Elden Ring (`PPSA04610`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Helldivers II (`PPSA01413`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Marvel's Spider-Man 2 (`PPSA03016`) | ✅ | — | — | ✅ | — | — | — | — | — | ○ |
 | Astro Bot (`PPSA21564`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
@@ -41,11 +41,12 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 
 ## Estado das tarefas em andamento
 
+- **Elden Ring 01.018.001:** PKG e fingerprint concluídos; o conjunto preservado contém registro de aquisição, verificação por partes e checksums agregados.
 - **Helldivers II 01.007.101:** PKG e fingerprint concluídos. Os dumps base e atualizado e a working copy foram adiados conscientemente por causa da dependência do serviço online e da prioridade de títulos mais autônomos da fila.
 
 ## Próximo marco
 
-Baixar e fingerprintar os patches restantes enquanto o HD está conectado ao computador. A ordem prevista é Elden Ring, Death Stranding 2 e Marvel's Spider-Man 2.
+Baixar e fingerprintar os patches restantes enquanto o HD está conectado ao computador. A ordem prevista é Death Stranding 2 e Marvel's Spider-Man 2.
 
-Última atualização: 10 de novembro de 2026.
+Última atualização: 17 de novembro de 2026.
 
