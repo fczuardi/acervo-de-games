@@ -36,14 +36,21 @@ O `eboot.bin` tem 109.163.961 bytes e SHA-256 `7e03d8f703f1cd7dc2cc9e6c55318450a
 O `dump-info.json` tem SHA-256
 `aea1b80d9f9b0fb1dcc102478ef07b5f95e75b19a8953ec97ccda787185fa1da`.
 Ainda assim, este dump é anterior ao protocolo atual do acervo: não encontrei
-um log detalhado da extração nem manifestos completos de hashes e tamanhos.
+um log detalhado da extração.
 Também conferi o `log.txt` compartilhado do App Dumper, mas seu primeiro
 registro é de 20 de outubro e não há nele uma entrada para `PPSA24156`.
 Portanto, a data e a duração acima vêm do `dump-info.json`, não desse log.
-Essas evidências ainda precisam ser produzidas antes de tratar o conjunto como
-equivalente aos dumps feitos pelo fluxo atual.
+Depois de incorporar a árvore ao acervo, gerei os manifestos pelo protocolo
+atual, excluindo `sce_sys/`: são 6.161 arquivos e 26.025.774.673 bytes
+aparentes. O manifesto SHA-256 tem hash
+`5f5cb31f8e3ec73f4b7d5da3224da58177aabb28f13b9fadafd00e6fca11885c`;
+o manifesto de tamanhos tem hash
+`9341c132d8ae6c2d09f17aff44bee26b3c43dc51d349c079048694fa463ae777`.
 
-Também não afirmo ainda que `01.010.000` era a versão-base ou a versão mais recente compatível no momento da extração. É apenas a versão que o próprio dump registra. Antes do jailbreak eu usava o que já estava instalado no console, então este conteúdo pode ter vindo de uma atualização intermediária.
+O ProsperoPatches identifica `01.010.000` como a versão mais recente e informa
+firmware mínimo `10.20.00.06`, abaixo do `13.60` do console. Neste caso, o dump
+antigo já corresponde à versão mais recente compatível, embora o manifesto
+original e o retail PKG ainda precisem ser incorporados ao acervo.
 
 ## Por que vou mantê-lo
 
@@ -51,7 +58,10 @@ Nos jogos físicos do lote, um dump intermediário pode se tornar redundante qua
 
 Isso não quer dizer que o dump contenha ou substitua uma licença válida, nem garante que uma imagem derivada vá iniciar offline. São perguntas que ainda precisam de testes separados. Significa apenas que apagar o conteúdo antes desses testes eliminaria uma evidência que não tenho como recriar com um disco.
 
-Os próximos passos são gerar manifestos SHA-256 e de tamanhos pelo protocolo atual, registrar os metadados que podem ser publicados sem expor dados sensíveis e criar uma working copy separada. Depois quero testar, com a rede desligada, até onde essa cópia consegue iniciar no console e documentar o resultado sem confundir preservação dos arquivos com preservação do direito de execução.
+Os próximos passos são preservar o manifesto original e o retail PKG, criar
+uma working copy separada e testar, com a rede desligada, até onde essa cópia
+consegue iniciar no console. Quero documentar o resultado sem confundir
+preservação dos arquivos com preservação do direito de execução.
 
 Por enquanto, a decisão é simples: este dump não será transformado em tombstone. Em um título digital-only, gratuito e dependente da PSN para aquisição, a cópia antiga merece mais cautela, não menos.
 
