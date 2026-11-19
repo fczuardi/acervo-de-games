@@ -94,7 +94,10 @@ A comparação dos arquivos `sce_sys/param.json` revelou que o dump anterior era
 
 Portanto, não se trata de duas extrações da mesma versão. Essa diferença explica de maneira plausível as alterações no executável, mas ainda não demonstra a reprodutibilidade do dumper.
 
-O dump antigo foi preservado.
+O dump antigo foi preservado naquele momento. Em 11 de novembro de 2026, a
+versão `01.004.000` foi [selecionada para descarte por economia de espaço]({{
+'/evidence/demons-souls-01.004.000-tombstone/README.md' | relative_url }}). O registro
+remanescente documenta também as limitações da evidência disponível.
 
 ## Próximos passos
 

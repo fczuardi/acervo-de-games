@@ -1,5 +1,20 @@
 set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
 
+# Query the small, public Prospero Patches version list. This does not fetch a
+# Sony manifest or PKG. Pass an output path to retain the response as JSON.
+inspect-prospero title_id output="":
+    if [[ -n "{{ output }}" ]]; then \
+      python3 scripts/inspect_prospero.py "{{ title_id }}" --output "{{ output }}"; \
+    else \
+      python3 scripts/inspect_prospero.py "{{ title_id }}"; \
+    fi
+
+# Fetch and validate only the small Sony manifest before deciding to download.
+inspect-patch url manifest:
+    python3 scripts/inspect_patch.py \
+      "{{ url }}" \
+      "{{ manifest }}"
+
 # Download through a safe .part file and validate size against our manifest.
 download-patch fetchpkg manifest output url:
     python3 scripts/download_patch.py \
@@ -31,10 +46,16 @@ dump-manifests game_dir output_dir stem *flags:
       "{{ stem }}" \
       {{ flags }}
 
-# Fingerprint a retail patch and verify every Sony-manifest piece in one read.
+# Create or validate the retained checksum for a Sony manifest.
+ensure-patch-manifest patch_dir stem:
+    python3 scripts/ensure_manifest_checksum.py "{{ patch_dir }}" "{{ stem }}"
+
+# Complete a patch record: validate the manifest, fingerprint the retail PKG,
+# verify every Sony-manifest piece in one read, and finalize all sidecars.
 # Example:
 # just verify-patch "/run/media/fcz/PS5_DUMPS/Acervo/patches/Astro Bot - PPSA21564" astro-bot-01.019.000
 verify-patch patch_dir stem:
+    python3 scripts/ensure_manifest_checksum.py "{{ patch_dir }}" "{{ stem }}"
     python3 scripts/verify_patch.py \
       "{{ patch_dir }}/{{ stem }}.json" \
       "{{ patch_dir }}/{{ stem }}.pkg" \

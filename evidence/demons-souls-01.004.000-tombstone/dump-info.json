@@ -1,0 +1,12 @@
+{
+  "tool": "ps5-app-dumper",
+  "version": "2.10",
+  "titleId": "PPSA01342",
+  "title": "Demon's Souls",
+  "folder": "PPSA01342-app0_Demon's_Souls",
+  "state": "done",
+  "started": 1792524239,
+  "finished": 1792529722,
+  "bytes": 88020163452,
+  "settings": { "decrypt": 1, "fself": 0, "backport": 0, "ps4BackportLevel": 4, "ps5BackportLevel": 1, "split": 3 }
+}

@@ -15,7 +15,7 @@ Esta é uma lista inicial de jogos, demonstrações, experiências interativas e
 |---|---|---|---|---|
 | 1 | [The Matrix Awakens: An Unreal Engine 5 Experience](https://prosperopatches.com/PPSA05753) | `PPSA05753` (US); [`PPSA05754` (EU)](https://prosperopatches.com/PPSA05754) | Demonstração técnica gratuita, posteriormente deslistada | Registro identificado; manifesto/PKG pendentes |
 | 2 | [KID A MNESIA EXHIBITION](https://prosperopatches.com/PPSA05786) | `PPSA05786` (US) | Exposição artística interativa do universo de Radiohead; distribuição exclusivamente digital no console | Registro identificado; manifesto/PKG pendentes |
-| 3 | [SILENT HILL: The Short Message](https://prosperopatches.com/PPSA04877) | `PPSA04877` (US); [`PPSA10112` (AS)](https://prosperopatches.com/PPSA10112) | Experiência narrativa gratuita e single-player | Registro indicado; manifesto/PKG pendentes |
+| 3 | [SILENT HILL: The Short Message](https://prosperopatches.com/PPSA04877) | `PPSA04877` (US); [`PPSA10112` (AS)](https://prosperopatches.com/PPSA10112) | Experiência narrativa gratuita e single-player | Manifesto e PKG `01.000.001` preservados e verificados; instalação direta e via PatchDL concluídas; execução offline bloqueada por entitlement |
 | 4 | [My First Gran Turismo](https://prosperopatches.com/PPSA24156) | `PPSA24156` | Jogo gratuito comemorativo e digital-only; sem disco para comprovação offline da licença | Dump `01.010.000` e fingerprint preservados; versão mais recente compatível identificada; manifesto/PKG e teste offline pendentes |
 | 5 | [ASTRO's PLAYROOM](https://prosperopatches.com/PPSA01325) | `PPSA01325` (interno) | Jogo pré-instalado no PS5; caso de referência do PatchDL para console restaurado | Registro identificado; instalação relatada pelo PatchDL, não testada aqui |
 | 6 | [Share Factory Studio](https://prosperopatches.com/PPSA01280) | `PPSA01280` (interno) | Aplicativo gratuito de criação e edição no PS5 | Registro identificado; manifesto/PKG pendentes |
@@ -33,6 +33,8 @@ Esta é uma lista inicial de jogos, demonstrações, experiências interativas e
 | 7 | [The Sims 4](https://orbispatches.com/CUSA09209) | `CUSA09209` (US); [`CUSA09216` (EU)](https://orbispatches.com/CUSA09216) | Jogo-base passou a ser gratuito; distinguir preservação da base, atualizações e DLCs pagos | Registro identificado; manifesto/PKG pendentes |
 
 **Atenção à diferença entre plataformas:** o experimento com [Demon's Souls instalado a partir de um update de PS5]({% post_url 2026-11-10-demons-souls-update-sem-base %}) não demonstra que um patch de PS4 possa substituir o pacote-base. Para títulos PS4, preservar a instalação existente e investigar um dump próprio pode ser mais importante do que obter apenas o patch.
+
+O experimento com [SILENT HILL: The Short Message]({% post_url 2026-11-11-silent-hill-the-short-message-sem-licenca %}) também estabeleceu uma distinção importante para esta fila. O retail patch contém uma aplicação completa e pôde ser instalado sem base anterior, tanto diretamente quanto pelo PatchDL, mas as duas instalações foram recusadas pela mesma verificação de licença. Gratuidade histórica, instalação técnica e entitlement são estados separados. Por isso não pretendo repetir automaticamente esse teste demorado em cada título gratuito de PS5; Silent Hill passa a ser o caso de referência, e exceções precisarão de um motivo específico.
 
 ## Triagem de catálogos de jogos gratuitos
 
@@ -58,4 +60,4 @@ Estados sugeridos: **identificado → manifesto verificado → PKG preservado �
 
 A existência de páginas públicas de updates é somente uma pista: as listas de versões são carregadas dinamicamente e **não foram verificadas nesta primeira edição**. A lista pode crescer com outros aplicativos gratuitos encontrados em consoles preservados, mesmo quando não houver registro de patch.
 
-*Primeira versão: 10 de novembro de 2026. Ampliação inicial após triagem do GG.deals: 10 de novembro de 2026.*
+*Primeira versão: 10 de novembro de 2026. Ampliação inicial após triagem do GG.deals: 10 de novembro de 2026. Atualizada com o experimento de Silent Hill: 11 de novembro de 2026.*

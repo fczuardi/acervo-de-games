@@ -62,7 +62,7 @@ aplica ao caso digital.
 - **Marvel's Spider-Man 2 01.004.003:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.005.001`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
 - **My First Gran Turismo 01.010.000:** dump antigo incorporado ao acervo e fingerprint concluído. O ProsperoPatches identifica esta como a versão mais recente, com firmware mínimo `10.20.00.06`; o manifesto original e o PKG ainda precisam ser preservados, e a execução offline ainda não foi testada.
 - **Recompile 01.004.000:** manifesto, retail PKG e fingerprint concluídos; as duas partes foram verificadas e o conjunto de preservação foi finalizado. O disco ainda não foi inserido no console, preservando o estado inicial para o teste patch-only e a primeira validação da licença física.
-- **Elden Ring 01.018.001:** PKG e fingerprint concluídos; o conjunto preservado contém registro de aquisição, verificação por partes e checksums agregados.
+- **Elden Ring 01.018.001:** retail PKG de 65.184.595.968 bytes e fingerprint concluídos; o conjunto preservado contém registro de aquisição, SHA-256, checksums agregados e verificação das 17/17 partes contra o manifesto da Sony.
 - **Elden Ring 01.000.000:** dump-base antigo incorporado ao acervo e fingerprint concluído; a extração não possui `dump-info.json` nem log específico preservado.
 - **Helldivers II 01.007.101:** PKG e fingerprint concluídos. Os dumps base e atualizado e a working copy foram adiados conscientemente por causa da dependência do serviço online e da prioridade de títulos mais autônomos da fila.
 
