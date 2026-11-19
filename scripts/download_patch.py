@@ -85,6 +85,15 @@ def main() -> None:
     if not isinstance(expected_size, int) or expected_size < 1:
         fail("manifest has no valid originalFileSize")
 
+    manifest_digest = hashlib.sha256(manifest_bytes).hexdigest()
+    manifest_checksum = manifest_path.with_suffix(".manifest.sha256")
+    checksum_content = f"{manifest_digest}  {manifest_path.name}\n"
+    if manifest_checksum.exists():
+        if manifest_checksum.read_text(encoding="utf-8") != checksum_content:
+            fail(f"retained manifest checksum differs: {manifest_checksum}")
+    else:
+        write_atomic(manifest_checksum, checksum_content)
+
     output.parent.mkdir(parents=True, exist_ok=True)
     started = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
     result = subprocess.run(
