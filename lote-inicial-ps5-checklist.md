@@ -9,9 +9,9 @@ Esta é minha lista de trabalho para levar até o fim a preservação dos oito j
 
 Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, considero concluído o ciclo mínimo quando preservei a instalação limpa do disco, a atualização oficial compatível, os fingerprints dos dois dumps e uma cópia de trabalho que consegui executar sem o disco.
 
-**Progresso obrigatório: 47 de 79 etapas — 59,5%.**
+**Progresso obrigatório: 48 de 79 etapas — 60,8%.**
 
-<progress value="47" max="79">47 de 79</progress>
+<progress value="48" max="79">48 de 79</progress>
 
 `✅` concluído · `◐` em andamento ou aguardando conferência · `—` ainda não iniciado · `○` opcional · `n/a` não se aplica
 
@@ -25,7 +25,7 @@ Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, co
 | Marvel's Spider-Man 2 (`PPSA03016`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Astro Bot (`PPSA21564`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Death Stranding 2: On the Beach (`PPSA02015`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
-| Recompile (`PPSA03183`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | n/a | n/a | ◐ | ✅ |
+| Recompile (`PPSA03183`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | n/a | n/a | ✅ | ✅ |
 
 ## Título digital adicional
 
@@ -61,14 +61,14 @@ aplica ao caso digital.
 - **Astro Bot 01.018.000:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.019.000`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
 - **Marvel's Spider-Man 2 01.004.003:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.005.001`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
 - **My First Gran Turismo 01.010.000:** dump antigo incorporado ao acervo e fingerprint concluído. O ProsperoPatches identifica esta como a versão mais recente, com firmware mínimo `10.20.00.06`; o manifesto original e o PKG ainda precisam ser preservados, e a execução offline ainda não foi testada.
-- **Recompile 01.005.000:** a edição limitada contém Master Version `02.00` e uma revisão mais nova que o `01.004.000` disponível no histórico público de updates. O dump-base foi concluído e fingerprintado: 176 arquivos e 2.801.195.414 bytes aparentes. A imagem Dump Forge também foi criada e fingerprintada, mas sua execução sem o disco ainda aguarda registro. Como o patch preservado é anterior à versão do disco, as etapas de dump atualizado não se aplicam a esta mídia.
+- **Recompile 01.005.000:** a edição limitada contém Master Version `02.00` e uma revisão mais nova que o `01.004.000` disponível no histórico público de updates. O dump-base foi concluído e fingerprintado: 176 arquivos e 2.801.195.414 bytes aparentes. A imagem Dump Forge também foi criada, fingerprintada e validada sem o disco durante a primeira missão inteira, sem problemas visíveis. Como o patch preservado é anterior à versão do disco, as etapas de dump atualizado não se aplicam a esta mídia.
 - **Elden Ring 01.018.001:** retail PKG de 65.184.595.968 bytes e fingerprint concluídos; o conjunto preservado contém registro de aquisição, SHA-256, checksums agregados e verificação das 17/17 partes contra o manifesto da Sony.
 - **Elden Ring 01.000.000:** dump-base antigo incorporado ao acervo e fingerprint concluído; a extração não possui `dump-info.json` nem log específico preservado.
 - **Helldivers II 01.007.101:** PKG e fingerprint concluídos. Os dumps base e atualizado e a working copy foram adiados conscientemente por causa da dependência do serviço online e da prioridade de títulos mais autônomos da fila.
 
 ## Próximo marco
 
-Registrar o teste sem disco da working copy `01.005.000` de Recompile. Em seguida, criar e testar offline a working copy de My First Gran Turismo e retomar os demais dumps físicos.
+Criar e testar offline a working copy de My First Gran Turismo e retomar os demais dumps físicos.
 
 Última atualização: 20 de novembro de 2026.
 

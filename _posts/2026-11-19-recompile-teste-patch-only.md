@@ -67,12 +67,12 @@ Depois de incorporar a árvore ao acervo, gerei os manifestos pelo protocolo atu
 - SHA-256 do manifesto de arquivos: `f15d72af52c5651e1bdeb39ca2decd349226999709c77e749ae4f95c9382fb75`;
 - SHA-256 do manifesto de tamanhos: `dc2593919fd1f5bfa9a7bad09a4e6ba605e575143cf6c7507e25248d5518e5de`.
 
-Também criei com o Dump Forge uma imagem derivada de 1.956.904.960 bytes. Seu SHA-256 é `4e0cedc9ee2b2d9e4e7580be284df8c7e43314789fd61d4c69e1ebdf87cc38b0`. O ShadowMount registrou essa imagem a partir do M.2 como `PPSA03183`, versão `01.005.000`, sem reinstalar um `app.pkg` nativo. A validação de execução sem o disco ainda precisa ser registrada; por isso a imagem permanece como working copy em conferência, não como ciclo concluído.
+Também criei com o Dump Forge uma imagem derivada de 1.956.904.960 bytes. Seu SHA-256 é `4e0cedc9ee2b2d9e4e7580be284df8c7e43314789fd61d4c69e1ebdf87cc38b0`. O ShadowMount registrou essa imagem a partir do M.2 como `PPSA03183`, versão `01.005.000`, sem reinstalar um `app.pkg` nativo. Com o disco e a instalação nativa removidos, joguei a primeira missão inteira a partir dessa working copy. A inicialização, o carregamento dos recursos e a execução transcorreram sem nenhum problema visível.
 
 ## Resultado
 
 O experimento patch-only não repetiu o comportamento de *Demon's Souls*. O `01.004.000` oficial é instalável como aplicação completa, mas não abre sem licença e não combina com este disco, que carrega a revisão posterior `01.005.000`. O prompt de versão diferente não indicava um patch defeituoso: revelava uma versão física ausente do histórico público consultado.
 
-O resultado muda a prioridade de preservação. O dump do disco `01.005.000` e sua identificação como Master Version `02.00` são agora os artefatos centrais; o patch `01.004.000` continua preservado como revisão histórica anterior. A working copy só será marcada como validada depois de um teste de execução sem o disco.
+O resultado muda a prioridade de preservação. O dump do disco `01.005.000` e sua identificação como Master Version `02.00` são agora os artefatos centrais; o patch `01.004.000` continua preservado como revisão histórica anterior. A execução completa da primeira missão pela working copy, sem o disco, fecha o ciclo mínimo de preservação desta prensagem.
 
 #ps5 #recompile #patchdl #patch-only #midia-fisica #preservacao
