@@ -1,0 +1,28 @@
+ELDEN RING 01.018.001 FINGERPRINTS
+
+PATCH-ONLY REFERENCE DUMP
+scope=regular files excluding root sce_sys/
+files=114735
+apparent_bytes=156057680842
+sha256_manifest=Elden-Ring-01.018.001-patch-only.sha256
+sha256_manifest_sha256=a6ee0cb7ca0a2bad956735d176104c567a87a8e57cd71c6b7427a5016b3e46c0
+size_manifest=Elden-Ring-01.018.001-patch-only.sizes.tsv
+size_manifest_sha256=02c5c2e3545467bba0354bd4f6c0e9aca952abe902ac789471cf7b1e1b1f9a4d
+sha256_manifest_lines=114735
+size_manifest_lines=114735
+
+ZSTD MEDIUM WORKING COPY
+scope=all physical regular files, including sce_sys/
+files=49
+apparent_bytes=75145310275
+sha256_manifest=Elden-Ring-01.018.001-zstd-medium.sha256
+sha256_manifest_sha256=5cea4b45252ba071199b5ee4d056b82f9c8d17f3d0fa112e3ea8323533e3b9c2
+size_manifest=Elden-Ring-01.018.001-zstd-medium.sizes.tsv
+size_manifest_sha256=9ec019f88a25d648061363015a4cb2882f5d0e2230d3f6fea6e5547cc96a7b59
+sha256_manifest_lines=49
+size_manifest_lines=49
+
+VALIDATION
+Both manifest pairs have matching line counts. The four manifest hashes were
+independently recalculated after generation and match the values printed by the
+resumable manifest tool. No source payload was modified or removed.

@@ -1,0 +1,38 @@
+ELDEN RING DUMP FORGE LINUX PACK
+
+tool=PS5 Dump Forge 0.5.6 Linux x86-64
+source=/run/media/fcz/PS5_DUMPS/homebrew/ps5-app-dumper/dumps/PPSA04610-app0_ELDEN_RING
+output=/run/media/fcz/PS5_DUMPS/Acervo/ps5/working-images/Elden Ring - PPSA04610 - 01.018.001
+target=folder
+compression=zstd
+zstd_level=9
+chunk_size=256 KiB
+full_verify=false
+source_deleted=false
+
+PACK RESULT
+status=success
+output_bytes=75131427965
+output_files=114762
+packed_files=114732
+loose_files=30
+zstd_volumes=18
+logical_bytes=156149281464
+
+FAST VERIFICATION
+status=passed
+mode=fast
+checked_bytes=116093678264
+total_bytes=156149281464
+samples=116321
+seed=7474541510627334
+manifest_paths=match source
+empty_dirs=0 match source
+logical_sizes=match source
+zstd_index=reader checks passed
+zstd_volume_headers=18 passed reader checks
+
+NOTES
+The source dump was retained. This was the CLI's default fast verification, not
+--full-verify. A complete fingerprint and console execution test remain required
+before the source dump can be considered for a tombstone.

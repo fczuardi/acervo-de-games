@@ -9,6 +9,10 @@ Esse detalhe ficou mais importante depois do experimento com *Demon's Souls*. Na
 
 Para *My First Gran Turismo*, essa rota não existe. Se eu remover a instalação, perder o acesso à conta, ou o serviço deixar de oferecer o título, não posso recorrer a uma mídia física para repetir o teste. Gratuito não significa independente da infraestrutura de distribuição e licenciamento.
 
+## Working copy
+
+Produzi uma working copy FFPKG de `01.010.000`, com 14.807.597.056 bytes. O SHA-256 da imagem final é `c2cd23c9f4e67b87948d6be2dde3760574a66f377fb64b5a31eadf21e1e2a8e1`; o manifest de uma linha está guardado ao lado do arquivo. A imagem foi montada e executada com sucesso no console, encerrando a validação funcional da working copy.
+
 ## O dump encontrado
 
 O `dump-info.json`, preservado no diretório pai da extração, registra uma

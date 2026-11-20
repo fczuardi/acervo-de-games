@@ -1,0 +1,54 @@
+ELDEN RING PATCH-ONLY POST-DUMP STATE
+
+observed_at=2026-11-21T02:04:21-03:00
+method=read-only FTP inspection through Chiral FTP
+title_id=PPSA04610
+
+INSTALLED STATE AFTER DUMP
+/user/app/PPSA04610=present
+/user/patch/PPSA04610=absent
+/user/appmeta/PPSA04610=present
+
+DUMP OUTPUT
+path=/mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA04610-app0_ELDEN_RING
+sidecar=/mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA04610-app0_ELDEN_RING.dump-info.json
+tool=ps5-app-dumper
+tool.version=2.10
+state=done
+started_epoch=1795231698
+finished_epoch=1795237037
+duration_seconds=5339
+bytes=156112555864
+settings.decrypt=1
+settings.fself=0
+settings.backport=0
+settings.split=3
+
+LOG REVIEW
+log=/data/homebrew/ps5-app-dumper/logs/2026-11-21_002818_PPSA04610.log
+lines=789
+bytes=93704
+reported_progress=100 percent
+reported_total=145.34 GB
+reported_average_speed=27.93 MB/s
+error_or_failure_lines=0
+unpkg=SUCCESS - 22 files extracted directly without temporary carving
+
+STRUCTURE CHECK
+sce_sys=present
+sce_sys/param.json=present
+sce_sys/origin-param.json=present
+sce_sys/target-param.json=present
+sce_sys/about=present
+sce_sys/keystone=present
+sce_sys/pfs-version.dat=present
+
+INTERPRETATION
+The second recorded dump run completed successfully. Its dump-info sidecar is
+in state "done", records 156112555864 processed bytes and the intended decrypt,
+FSELF and backport settings. The final log contains no line matching error or
+failure, reaches 100 percent, and the installed patch-only registration remains
+unchanged after the dump.
+
+No game payload, credential, console-specific identifier or distribution URL
+is included in this record.

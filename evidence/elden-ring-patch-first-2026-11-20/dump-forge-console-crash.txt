@@ -1,0 +1,30 @@
+ELDEN RING DUMP FORGE CONSOLE FAILURE
+
+reported_at=2026-11-21
+platform=PlayStation 5
+source=/mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA04610-app0_ELDEN_RING
+attempts=2
+
+OBSERVED BEHAVIOR
+Both attempts reached the stage where Dump Forge read and interpreted the dump
+directory. The application crashed before presenting the output filename derived
+from the Product ID and version, and before the pack operation could begin.
+
+OUTPUT INSPECTION
+/mnt/usb0/pkg-build-output contained only the pre-existing uncharted4-pfsc.pkg.
+/mnt/usb0/Acervo/ps5/working-images contained only the pre-existing Demon's Souls
+and Recompile directories. No Elden Ring output or partial image was found.
+
+DUMP FORGE DATA INSPECTION
+/data/dumpforge contained the launcher ELF, lock, tile ownership and two serve
+logs. The serve logs only recorded successful startup, HTTP listening on port
+8095, and up-to-date tile/self-copy state. No crash report, backtrace or pack log
+was present.
+
+CONCLUSION
+No working copy was created. The source dump remains the only extracted payload
+and must be retained. Further console attempts are paused; the next controlled
+attempt should use the cross-platform Dump Forge build on the PC so terminal
+diagnostics can be captured if the failure repeats.
+
+No game payload, credential or console-specific identifier is included here.

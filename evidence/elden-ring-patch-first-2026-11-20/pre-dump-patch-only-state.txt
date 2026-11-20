@@ -1,0 +1,58 @@
+ELDEN RING PATCH-ONLY PRE-DUMP STATE
+
+observed_at=2026-11-20T23:18:50-03:00
+method=read-only FTP inspection through Chiral FTP
+title_id=PPSA04610
+
+FILESYSTEM REGISTRATION
+/user/app/PPSA04610=present
+/user/patch/PPSA04610=absent
+/user/appmeta/PPSA04610=present
+
+INSTALLED PACKAGE
+/user/app/PPSA04610/app.pkg.size=65184595968
+expected_preserved_pkg.size=65184595968
+/user/app/PPSA04610/app.json.numberOfSplitFiles=17
+/user/app/PPSA04610/app.json.originalFileSize=65184595968
+/user/app/PPSA04610/app.json.packageDigest=73186E80F8F8674EB35E25EFEB5A27107C8BD9AB93CEEF9805D7406B6A039509
+/user/app/PPSA04610/app.json.playgoChunkCrcHashValue=2DB86CE23DB70E010B8380EDC4AEA5823FE18E5D7591A8F0642CEB324B1B10C5
+
+APPMETA PARAM.JSON
+contentId=UP0700-PPSA04610_00-ELDENRING0000000
+contentVersion=01.018.001
+masterVersion=01.00
+originContentVersion=01.000.000
+targetContentVersion=01.018.000
+requiredSystemSoftwareVersion=0x1360000000000000
+applicationDrmType=standard
+contentBadgeType=1
+
+PATCHDL INTERNAL STATE
+/data/patchdl/PPSA04610/UP0700-PPSA04610_00-ELDENRING0000000.pkg=present
+/data/patchdl/PPSA04610/state.json=present
+/data/patchdl/PPSA04610/UP0700-PPSA04610_00-ELDENRING0000000.crc=present
+/data/patchdl/PPSA04610/UP0700-PPSA04610_00-ELDENRING0000000.json=present
+/data/patchdl/PPSA04610/icon0.png=present
+state.version=01.018.001
+state.total=65184595968
+state.piece_count=17
+state.done_bytes=65184595968
+state.done=ffff01
+state.have=<empty>
+
+INTERPRETATION
+The official retail update is registered as the complete application under
+/user/app rather than as a separate /user/patch tree. Its installed app.pkg
+size exactly matches the preserved reconstructed PKG. PatchDL retained the
+completed internal download and generated its local 17-piece installation
+manifest and CRC sidecar.
+
+EXECUTION CHECK
+disc_version=01.000.000
+installed_patch_only_version=01.018.001
+result=launched successfully to the start screen
+scope=initial launch only; no extended gameplay claimed
+interpretation=the physical disc served as a local license for the newer patch-only application
+
+No game payload, credential, console-specific identifier or distribution URL
+is included in this record.

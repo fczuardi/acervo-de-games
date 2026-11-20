@@ -1,0 +1,29 @@
+PS5 FINAL WORKING-COPY FINGERPRINTS — 2026-11-21
+
+My First Gran Turismo
+title_id=PPSA24156
+version=01.010.000
+format=ffpkg
+bytes=14807597056
+sha256=c2cd23c9f4e67b87948d6be2dde3760574a66f377fb64b5a31eadf21e1e2a8e1
+file=[My First Gran Turismo]-[PPSA24156][01.010.000].ffpkg
+
+Ratchet & Clank: Rift Apart
+title_id=PPSA01473
+version=01.005.003
+format=ffpkg
+bytes=37576966144
+sha256=4cb15dd0f68c2302646eaef9856ef865cdd06a9e2a135d9dadf9b0eff81b2473
+file=[Ratchet & Clank Rift Apart]-[PPSA01473][01.005.003].ffpkg
+
+Elden Ring
+title_id=PPSA04610
+version=01.018.001
+format=ffpkg
+bytes=75301584896
+sha256=9f0d5296153750a5eded831310d6511baa00362d262874eda8d32af1702e96a7
+file=[ELDEN RING]-[PPSA04610][01.018.001].ffpkg
+
+Each SHA-256 was computed by streaming the complete FFPKG through GNU
+sha256sum. The adjacent .sha256 manifest contains exactly one entry and uses
+the image's basename.

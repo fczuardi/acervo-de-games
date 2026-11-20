@@ -20,11 +20,13 @@ def fail(message: str) -> None:
     raise SystemExit(1)
 
 
-def sha256_file(path: Path) -> str:
+def sha256_file(path: Path, on_bytes=None) -> str:
     digest = hashlib.sha256()
     with path.open("rb", buffering=0) as stream:
         while block := stream.read(BLOCK_SIZE):
             digest.update(block)
+            if on_bytes is not None:
+                on_bytes(len(block))
     return digest.hexdigest()
 
 
@@ -124,6 +126,11 @@ def main() -> None:
         action="store_true",
         help="replace manifests from an explicitly repeated run",
     )
+    parser.add_argument(
+        "--include-sce-sys",
+        action="store_true",
+        help="include root sce_sys/ (for derived working copies, not reference dumps)",
+    )
     args = parser.parse_args()
 
     game_dir = args.game_dir.resolve()
@@ -154,7 +161,7 @@ def main() -> None:
     newlines = 0
     for root, directories, filenames in os.walk(game_dir):
         root_path = Path(root)
-        if root_path == game_dir:
+        if root_path == game_dir and not args.include_sce_sys:
             directories[:] = [name for name in directories if name != "sce_sys"]
         for filename in filenames:
             path = root_path / filename
@@ -177,6 +184,30 @@ def main() -> None:
 
     started = time.monotonic()
     apparent_bytes = sum(size for _key, _path, _relative, size in files)
+    resumed_bytes = sum(size for _key, _path, _relative, size in files[:resume_index])
+    run_bytes = 0
+    last_progress = started
+
+    def report_bytes(count: int) -> None:
+        nonlocal run_bytes, last_progress
+        run_bytes += count
+        now = time.monotonic()
+        if now - last_progress < 5:
+            return
+        elapsed = now - started
+        total_done = resumed_bytes + run_bytes
+        speed = run_bytes / elapsed if elapsed else 0
+        remaining = max(apparent_bytes - total_done, 0)
+        eta = remaining / speed if speed else 0
+        percent = total_done * 100 / apparent_bytes if apparent_bytes else 100
+        print(
+            f"bytes {total_done}/{apparent_bytes} ({percent:.1f}%); "
+            f"speed {speed / (1024 * 1024):.1f} MiB/s; "
+            f"elapsed {elapsed:.1f}s; ETA {eta:.1f}s",
+            flush=True,
+        )
+        last_progress = now
+
     try:
         with (
             sha_temporary.open("a", encoding="utf-8", newline="") as sha_stream,
@@ -186,7 +217,7 @@ def main() -> None:
                 size_stream.write(f"{size}\t{relative}\n")
                 if index <= resume_index:
                     continue
-                digest = sha256_file(path)
+                digest = sha256_file(path, report_bytes)
                 marker, encoded_path = sha256sum_path(relative)
                 sha_stream.write(f"{marker}{digest}  {encoded_path}\n")
                 if index % 10_000 == 0 or index == len(files):
