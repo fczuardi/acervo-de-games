@@ -73,6 +73,10 @@ Também criei com o Dump Forge uma imagem derivada de 1.956.904.960 bytes. Seu S
 
 O experimento patch-only não repetiu o comportamento de *Demon's Souls*. O `01.004.000` oficial é instalável como aplicação completa, mas não abre sem licença e não combina com este disco, que carrega a revisão posterior `01.005.000`. O prompt de versão diferente não indicava um patch defeituoso: revelava uma versão física ausente do histórico público consultado.
 
-O resultado muda a prioridade de preservação. O dump do disco `01.005.000` e sua identificação como Master Version `02.00` são agora os artefatos centrais; o patch `01.004.000` continua preservado como revisão histórica anterior. A execução completa da primeira missão pela working copy, sem o disco, fecha o ciclo mínimo de preservação desta prensagem.
+Os dois pacotes são inequivocamente diferentes em nível binário: mudam o tamanho da parte principal, os digests do pacote e do CRC e os metadados de versão. Isso ainda não permite dizer quais arquivos, códigos ou assets mudaram. Para uma comparação interna seria necessário extrair também `01.004.000`, o que depende de conseguir executá-lo e descriptografá-lo.
+
+Na pesquisa que fiz, não encontrei uma prensagem anterior de *Recompile* para PS5. Se todos os discos `PPSA03183` trouxerem esta master `01.005.000`, a rota física para licenciar `01.004.000` simplesmente não existe. Restaria um console com a edição digital adquirida e ainda licenciada antes do jailbreak, ou uma futura ferramenta capaz de descriptografar o pacote sem iniciar o jogo. Portanto, o retail PKG `01.004.000` está preservado e verificado, mas não foi executado nem extraído.
+
+O resultado muda a prioridade de preservação. O dump do disco `01.005.000` e sua identificação como Master Version `02.00` são agora os artefatos centrais; o patch `01.004.000` permanece como uma revisão histórica anterior, com a limitação acima registrada. A execução completa da primeira missão pela working copy, sem o disco, fecha o ciclo mínimo de preservação desta prensagem.
 
 #ps5 #recompile #patchdl #patch-only #midia-fisica #preservacao
