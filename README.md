@@ -66,6 +66,19 @@ O campo `urlRetained: false` significa que a URL completa não é repetida no
 registro de aquisição. Ela continua presente no manifesto Sony original,
 mantido em privado; o registro público conserva apenas seu SHA-256 e basename.
 
+Depois da verificação, o único PKG retido pode ser organizado diretamente no
+formato esperado pelo PatchDL, sem uma segunda cópia:
+
+```bash
+just organize-patchdl "/pasta/do-jogo" nome-base PPSA00000 "Nome do jogo" --apply
+```
+
+O comando deriva do manifesto o Content ID e o URL oficial, move o PKG por
+rename para `PPSA00000/CONTENT_ID.pkg`, cria nessa pasta um `state.json`
+concluído e atualiza os caminhos em `acquisition.json`, `verification.json` e
+`artifacts.sha256`. Sem `--apply`, ele apenas valida e mostra o plano. O hash do
+PKG já verificado é reutilizado; o arquivo grande não é relido.
+
 Os scripts não contêm jogos, chaves, URLs de distribuição ou outros dados do acervo privado.
 
 Para gerar os dois manifestos de um dump na mesma passagem ordenada, mantendo

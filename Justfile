@@ -63,6 +63,17 @@ verify-patch patch_dir stem:
       "{{ patch_dir }}/{{ stem }}.verification.json"
     python3 scripts/finalize_patch.py "{{ patch_dir }}" "{{ stem }}"
 
+# After verification, make the single retained PKG directly usable by
+# PatchDL: TITLE_ID/CONTENT_ID.pkg plus a complete state.json. With no
+# --apply this only prints and validates the plan.
+organize-patchdl patch_dir stem title_id name *flags:
+    python3 scripts/organize_patchdl_patch.py \
+      "{{ patch_dir }}" \
+      "{{ stem }}" \
+      "{{ title_id }}" \
+      "{{ name }}" \
+      {{ flags }}
+
 # Migrate a former monolithic record and rebuild the aggregate manifest.
 migrate-patch-record legacy_record:
     python3 scripts/migrate_patch_record.py "{{ legacy_record }}" --remove-legacy

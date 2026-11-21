@@ -53,8 +53,27 @@ o manifesto de tamanhos tem hash
 
 O ProsperoPatches identifica `01.010.000` como a versão mais recente e informa
 firmware mínimo `10.20.00.06`, abaixo do `13.60` do console. Neste caso, o dump
-antigo já corresponde à versão mais recente compatível, embora o manifesto
-original e o retail PKG ainda precisem ser incorporados ao acervo.
+antigo já corresponde à versão mais recente compatível.
+
+## Retail PKG oficial
+
+Preservei posteriormente o manifesto original e o retail PKG de
+`01.010.000`. O pacote tem 13.099.401.216 bytes e SHA-256
+`7a8db7f03603a55529410b158d0733c0f9492352164332e8a9b933bfaca94a11`.
+O manifesto tem SHA-256
+`b74bdf2fff0f9ba773295e515835e2037344ce1153478985fd9e5bf584493036`.
+
+As cinco partes contíguas conferiram com os SHA-256 declarados pela Sony. O
+manifesto revela uma composição regional peculiar: quatro partes pertencem a
+`PPSA24155`, e um suplemento final de 40.960.000 bytes pertence a
+`PPSA24156`. Não se trata de uma combinação inferida localmente; é a montagem
+determinada pelo próprio manifesto oficial de `PPSA24156`.
+
+O único PKG retido foi organizado diretamente no formato esperado pelo
+PatchDL, sob
+`PPSA24156/UP9000-PPSA24156_00-MYFRSTGT00000000.pkg`, acompanhado de um
+`state.json` concluído. Os registros de aquisição e verificação e o manifesto
+agregado foram atualizados para esse caminho sem reler nem duplicar o arquivo.
 
 ## Por que vou mantê-lo
 
@@ -62,11 +81,10 @@ Nos jogos físicos do lote, um dump intermediário pode se tornar redundante qua
 
 Isso não quer dizer que o dump contenha ou substitua uma licença válida, nem garante que uma imagem derivada vá iniciar offline. São perguntas que ainda precisam de testes separados. Significa apenas que apagar o conteúdo antes desses testes eliminaria uma evidência que não tenho como recriar com um disco.
 
-Os próximos passos são preservar o manifesto original e o retail PKG, criar
-uma working copy separada e testar, com a rede desligada, até onde essa cópia
-consegue iniciar no console. Quero documentar o resultado sem confundir
-preservação dos arquivos com preservação do direito de execução.
-
-Por enquanto, a decisão é simples: este dump não será transformado em tombstone. Em um título digital-only, gratuito e dependente da PSN para aquisição, a cópia antiga merece mais cautela, não menos.
+Com dump, fingerprints, retail PKG, working copy e teste funcional concluídos,
+o ciclo aplicável a este título digital está fechado. Isso não quer dizer que
+o dump contenha ou substitua uma licença válida em outro console. Por não
+existir disco e por a aquisição depender da PSN, o dump descriptografado não
+será transformado em tombstone.
 
 #ps5 #myfirstgranturismo #gran-turismo #digital-only #preservacao

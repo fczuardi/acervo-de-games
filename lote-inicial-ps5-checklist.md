@@ -36,7 +36,7 @@ aplica ao caso digital.
 
 | Jogo | Inv. | Dump base | FP base | Manifesto update | PKG | FP PKG | Dump atualizado | FP atualizado | Working copy | FP working |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| My First Gran Turismo (`PPSA24156`) | n/a | n/a | n/a | ◐ | — | — | ✅ | ✅ | ✅ | ✅ |
+| My First Gran Turismo (`PPSA24156`) | n/a | n/a | n/a | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## O que cada coluna quer dizer
 
@@ -61,7 +61,7 @@ aplica ao caso digital.
 - **Miles Morales 01.012.000:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.015.001`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
 - **Astro Bot 01.018.000:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.019.000`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
 - **Marvel's Spider-Man 2 01.004.003:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.005.001`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
-- **My First Gran Turismo 01.010.000:** dump antigo incorporado ao acervo e fingerprint concluído. O ProsperoPatches identifica esta como a versão mais recente, com firmware mínimo `10.20.00.06`; o manifesto original e o PKG ainda precisam ser preservados. O FFPKG foi executado com sucesso no console, possui 14.807.597.056 bytes e SHA-256 `c2cd23c9f4e67b87948d6be2dde3760574a66f377fb64b5a31eadf21e1e2a8e1`.
+- **My First Gran Turismo 01.010.000:** dump antigo incorporado ao acervo e fingerprint concluído. O retail PKG oficial possui 13.099.401.216 bytes e SHA-256 `7a8db7f03603a55529410b158d0733c0f9492352164332e8a9b933bfaca94a11`; as cinco partes do manifesto Sony conferiram. O FFPKG foi executado com sucesso no console, possui 14.807.597.056 bytes e SHA-256 `c2cd23c9f4e67b87948d6be2dde3760574a66f377fb64b5a31eadf21e1e2a8e1`. Todas as etapas aplicáveis estão concluídas.
 - **Recompile 01.005.000:** a edição limitada contém Master Version `02.00` e uma revisão mais nova que o `01.004.000` disponível no histórico público de updates. O dump-base foi concluído e fingerprintado: 176 arquivos e 2.801.195.414 bytes aparentes. A imagem Dump Forge também foi criada, fingerprintada e validada sem o disco durante a primeira missão inteira, sem problemas visíveis. Como o patch preservado é anterior à versão do disco, as etapas de dump atualizado não se aplicam a esta mídia.
 - **Elden Ring 01.018.001:** retail PKG de 65.184.595.968 bytes e fingerprint concluídos; o conjunto preservado contém registro de aquisição, SHA-256, checksums agregados e verificação das 17/17 partes contra o manifesto da Sony.
 - **Elden Ring 01.018.001 patch-only:** o disco `01.000.000` licenciou a execução da aplicação completa instalada somente a partir do retail update; o jogo chegou normalmente à tela de início. O dump foi concluído com o PS5 App Dumper v2.10. O `dump-info.json` registra estado `done`, 156.112.555.864 bytes processados, descriptografia ligada, FSELF e backport desligados. O fingerprint do dump foi concluído.
@@ -72,7 +72,7 @@ aplica ao caso digital.
 
 ## Próximo marco
 
-Preservar o manifesto e o retail PKG de My First Gran Turismo e retomar os demais dumps físicos.
+Retomar os dumps-base e atualizados dos demais jogos físicos.
 
 Última atualização: 21 de novembro de 2026.
 

@@ -46,10 +46,11 @@ def main() -> None:
     verification_path = directory / f"{stem}.verification.json"
     with verification_path.open(encoding="utf-8") as stream:
         verification = json.load(stream)
-    package = directory / f"{stem}.pkg"
     package_record = verification["assembledRetailPackage"]
-    if package.name != package_record["filename"]:
-        fail("verification record names a different package")
+    package_relative = Path(package_record["filename"])
+    if package_relative.is_absolute() or ".." in package_relative.parts:
+        fail("verification record names an unsafe package path")
+    package = directory / package_relative
     if package.stat().st_size != package_record["size"]:
         fail("package size differs from the verification record")
 
@@ -57,6 +58,7 @@ def main() -> None:
     with acquisition_path.open(encoding="utf-8") as stream:
         acquisition = json.load(stream)
     acquisition_package = acquisition["assembledRetailPackage"]
+    acquisition_package["filename"] = package_relative.as_posix()
     existing_hash = acquisition_package.get("sha256")
     if existing_hash not in (None, package_record["sha256"]):
         fail("package SHA-256 differs between acquisition and verification records")
@@ -80,7 +82,7 @@ def main() -> None:
         if not path.is_file():
             fail(f"required artifact is missing: {name}")
         rows.append((name, sha256_file(path)))
-    rows.append((package.name, package_record["sha256"]))
+    rows.append((package_relative.as_posix(), package_record["sha256"]))
     rows.sort(key=lambda item: item[0].encode("utf-8"))
 
     output = directory / f"{stem}.artifacts.sha256"
