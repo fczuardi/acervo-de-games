@@ -1,0 +1,76 @@
+Astro Bot (PPSA21564) — post-dump state
+Captured over FTP on 2026-11-21 after PS5 App Dumper reported completion.
+
+Installed state
+---------------
+/user/app/PPSA21564: present
+/user/patch/PPSA21564: absent
+/user/appmeta/PPSA21564: present
+/user/app/PPSA21564/app.pkg: 37886558208 bytes
+/data/patchdl/PPSA21564: present
+
+Dump artifacts
+--------------
+/mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA21564-app0_ASTRO_BOT
+/mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA21564-app0_ASTRO_BOT.dump-info.json
+
+Final dump-info.json
+--------------------
+{
+  "tool": "ps5-app-dumper",
+  "version": "2.10",
+  "titleId": "PPSA21564",
+  "title": "ASTRO BOT",
+  "folder": "PPSA21564-app0_ASTRO_BOT",
+  "state": "done",
+  "started": 1795303319,
+  "finished": 1795311590,
+  "bytes": 159802745004,
+  "settings": {
+    "decrypt": 1,
+    "fself": 0,
+    "backport": 0,
+    "ps4BackportLevel": 4,
+    "ps5BackportLevel": 1,
+    "split": 3
+  }
+}
+
+Log review
+----------
+The dumper created two detailed logs:
+
+- 2026-11-21_184552_PPSA21564.log: stopped without a terminal status at 68%,
+  102.33/148.77 GB copied. It records no explicit error or cancellation.
+- 2026-11-21_202159_PPSA21564.log: reached 100%, 148.77/148.77 GB,
+  at 2026-11-21 22:39:42. The global log then records appmeta, trophy and
+  UDS processing, successful decryption and completion at 22:39:50.
+
+The canonical sidecar interval is 8271 seconds (2:17:51). The active copy in
+the successful run began at 20:30:27 and the complete workflow ended at
+22:39:50.
+
+Working copy
+------------
+Dump Forge 0.5.6 created a full-verified FFPKG with zstd-packed assets:
+
+file: [ASTRO BOT]-[PPSA21564][01.019.000].ffpkg
+size: 45609320448 bytes
+sha256: 73b2cacf3dff4631f45c7b4e1cbf74182b93643259e525bdfe5c77f3f56887c9
+
+The image was mounted and executed successfully on the PS5 without the disc.
+
+Dump fingerprints
+-----------------
+Updated 01.019.000:
+- files: 166700
+- apparent bytes: 159744132637
+- SHA-256 manifest: e37d268371b295af824d057311657b632085ea3ea67569287e3d17fdc19f1fb2
+- sizes manifest: 50be9d898337572c82ed891ea869e1a9089509f29a11372ac649969c8e1b3096
+
+Disc base 01.000.000:
+- dumper processed bytes: 154993980216
+- files: 146987
+- apparent bytes: 154935393869
+- SHA-256 manifest: 9d885b865c16cc0dbef9de48b9672871a78824d6eeb8a1b631dcbac2c5d9876b
+- sizes manifest: b1182267b27c65e8c34e681747d8bbfa68b695ac3e418130ed3e91f174981815

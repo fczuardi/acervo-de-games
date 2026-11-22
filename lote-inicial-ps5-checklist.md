@@ -9,21 +9,21 @@ Esta é minha lista de trabalho para levar até o fim a preservação dos oito j
 
 Não uso “preservado” aqui como uma afirmação absoluta. Para esta meta, considero concluído o ciclo mínimo quando preservei a instalação limpa do disco, a atualização oficial compatível, os fingerprints dos dois dumps e uma cópia de trabalho que consegui executar sem o disco.
 
-**Progresso obrigatório: 53 de 79 etapas — 67,1%.**
+**Progresso obrigatório: 60 de 79 etapas — 75,9%.**
 
-<progress value="53" max="79">53 de 79</progress>
+<progress value="60" max="79">60 de 79</progress>
 
 `✅` concluído · `◐` em andamento ou aguardando conferência · `—` ainda não iniciado · `○` opcional · `n/a` não se aplica
 
 | Jogo | Inv. | Dump base | FP base | Manifesto update | PKG | FP PKG | Dump atualizado | FP atualizado | Working copy | FP working |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Demon's Souls (`PPSA01342`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
+| Marvel's Spider-Man: Miles Morales (`PPSA01411`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Ratchet & Clank: Em Uma Outra Dimensão (`PPSA01473`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Elden Ring (`PPSA04610`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Helldivers II (`PPSA01413`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Marvel's Spider-Man 2 (`PPSA03016`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
-| Astro Bot (`PPSA21564`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
+| Astro Bot (`PPSA21564`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Death Stranding 2: On the Beach (`PPSA02015`) | ✅ | — | — | ✅ | ✅ | ✅ | — | — | — | ○ |
 | Recompile (`PPSA03183`) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | n/a | n/a | ✅ | ✅ |
 
@@ -60,8 +60,11 @@ aplica ao caso digital.
 - **Ratchet & Clank 01.005.003:** dump atualizado antigo incorporado ao acervo e fingerprint concluído; a versão coincide com o patch preservado, mas a extração não possui `dump-info.json` nem log específico preservado. A working copy FFPKG foi validada, possui 37.576.966.144 bytes e SHA-256 `4cb15dd0f68c2302646eaef9856ef865cdd06a9e2a135d9dadf9b0eff81b2473`. Depois desses controles, o payload atualizado foi substituído por tombstone.
 - **Miles Morales 01.012.000:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.015.001`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
 - **Astro Bot 01.018.000:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.019.000`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
+- **Astro Bot 01.019.000 patch-only:** segunda aplicação do protocolo experimental v0.4.0 concluída. O retail update foi instalado sem base; `/user/app/PPSA21564` e `appmeta` ficaram presentes, `/user/patch/PPSA21564` permaneceu ausente e o disco licenciou a execução. O dump atualizado terminou com o PS5 App Dumper v2.10 e seu fingerprint registra 166.700 arquivos e 159.744.132.637 bytes aparentes. A working copy FFPKG Zstandard foi verificada e executada sem o disco; possui 45.609.320.448 bytes e SHA-256 `73b2cacf3dff4631f45c7b4e1cbf74182b93643259e525bdfe5c77f3f56887c9`. Depois desses controles, o payload atualizado foi substituído por tombstone.
+- **Astro Bot 01.000.000:** instalação limpa do disco extraída com estado `done`, 154.993.980.216 bytes processados, descriptografia ligada e FSELF/backport desligados. O fingerprint registra 146.987 arquivos e 154.935.393.869 bytes aparentes. Com o dump-base e a working copy validados, todas as etapas obrigatórias do título estão concluídas.
+- **Miles Morales 01.000.000:** dump-base concluído com o PS5 App Dumper v2.10, estado `done`, 78.759.017.680 bytes processados, descriptografia ligada e FSELF/backport desligados. O fingerprint registra 162 arquivos e 78.707.202.405 bytes aparentes; os hashes dos manifestos SHA-256 e de tamanhos são `aefa3df2f515c31ca4c16121f1b7fbdd854527b2bb8fb5b7b47ff703cd700bd2` e `03fd4ec37a6b8b67d514cccc090cb18efc8febe8d317b10142b2dedd8e06329b`.
 - **Marvel's Spider-Man 2 01.004.003:** dump intermediário convertido em tombstone após o fingerprint. A revisão é historicamente distinta e não é reconstruível a partir de `01.005.001`, mas seu payload ficou fora do escopo definido para o acervo; os dois manifestos e metadados essenciais foram preservados.
-- **My First Gran Turismo 01.010.000:** dump antigo incorporado ao acervo e fingerprint concluído. O retail PKG oficial possui 13.099.401.216 bytes e SHA-256 `7a8db7f03603a55529410b158d0733c0f9492352164332e8a9b933bfaca94a11`; as cinco partes do manifesto Sony conferiram. O FFPKG foi executado com sucesso no console, possui 14.807.597.056 bytes e SHA-256 `c2cd23c9f4e67b87948d6be2dde3760574a66f377fb64b5a31eadf21e1e2a8e1`. Todas as etapas aplicáveis estão concluídas.
+- **My First Gran Turismo 01.010.000:** dump antigo incorporado ao acervo e fingerprint concluído. O retail PKG oficial possui 13.099.401.216 bytes e SHA-256 `7a8db7f03603a55529410b158d0733c0f9492352164332e8a9b933bfaca94a11`; as cinco partes do manifesto Sony conferiram. O FFPKG foi executado com sucesso no console, possui 14.807.597.056 bytes e SHA-256 `c2cd23c9f4e67b87948d6be2dde3760574a66f377fb64b5a31eadf21e1e2a8e1`. Todas as etapas aplicáveis estão concluídas e o payload do dump foi substituído por tombstone, mantendo os manifestos e o sidecar. Como este era o único dump integral de um título digital-only, ficou registrado que futuros casos assim exigem confirmação específica ou prova de reconstrução da working copy contra o fingerprint antes do descarte.
 - **Recompile 01.005.000:** a edição limitada contém Master Version `02.00` e uma revisão mais nova que o `01.004.000` disponível no histórico público de updates. O dump-base foi concluído e fingerprintado: 176 arquivos e 2.801.195.414 bytes aparentes. A imagem Dump Forge também foi criada, fingerprintada e validada sem o disco durante a primeira missão inteira, sem problemas visíveis. Como o patch preservado é anterior à versão do disco, as etapas de dump atualizado não se aplicam a esta mídia.
 - **Elden Ring 01.018.001:** retail PKG de 65.184.595.968 bytes e fingerprint concluídos; o conjunto preservado contém registro de aquisição, SHA-256, checksums agregados e verificação das 17/17 partes contra o manifesto da Sony.
 - **Elden Ring 01.018.001 patch-only:** o disco `01.000.000` licenciou a execução da aplicação completa instalada somente a partir do retail update; o jogo chegou normalmente à tela de início. O dump foi concluído com o PS5 App Dumper v2.10. O `dump-info.json` registra estado `done`, 156.112.555.864 bytes processados, descriptografia ligada, FSELF e backport desligados. O fingerprint do dump foi concluído.

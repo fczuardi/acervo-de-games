@@ -1,0 +1,37 @@
+ASTRO BOT 01.019.000 PATCH-ONLY PRE-DUMP STATE
+captured=2026-11-21
+title_id=PPSA21564
+content_id=UP9000-PPSA21564_00-0000000000000000
+
+INSTALLATION
+/user/app/PPSA21564=present
+/user/patch/PPSA21564=absent
+/user/appmeta/PPSA21564=present
+/user/app/PPSA21564/app.pkg.size=37886558208
+/user/app/PPSA21564/app.json.numberOfSplitFiles=10
+/user/app/PPSA21564/app.json.originalFileSize=37886558208
+/user/app/PPSA21564/app.json.packageDigest=ED7A19A4018270EA5AC9A01C0AD0C8A3B116FC001F4239F0B57FC907CF75C395
+/user/app/PPSA21564/app.json.playgoChunkCrcHashValue=F0987285622C5642E6113B3EF5CB036C7CC5719AE84926ABC911D8617AACFA7B
+
+PARAM
+contentVersion=01.019.000
+masterVersion=01.00
+requiredSystemSoftwareVersion=0x1320000000000000
+
+PATCHDL
+/data/patchdl/PPSA21564=present
+/data/patchdl/PPSA21564/UP9000-PPSA21564_00-0000000000000000.pkg.size=37886558208
+/data/patchdl/PPSA21564/state.json.version=01.019.000
+/data/patchdl/PPSA21564/state.json.total=37886558208
+/data/patchdl/PPSA21564/state.json.piece_count=10
+/data/patchdl/PPSA21564/state.json.done_bytes=37886558208
+/data/patchdl/PPSA21564/state.json.done=ff03
+/data/patchdl/PPSA21564/local_manifest.originalFileSize=37886558208
+/data/patchdl/PPSA21564/local_manifest.numberOfSplitFiles=10
+/data/patchdl/PPSA21564/local_manifest.packageDigest=ED7A19A4018270EA5AC9A01C0AD0C8A3B116FC001F4239F0B57FC907CF75C395
+/data/patchdl/PPSA21564/local_manifest.playgoChunkCrcHashValue=f0987285622c5642e6113b3ef5cb036c7cc5719ae84926abc911d8617aacfa7b
+
+OBSERVATION
+The retail update was installed without a base application present. With the
+disc inserted as a local license, the game launched successfully before this
+snapshot. The updated dump was already running when the FTP state was read.

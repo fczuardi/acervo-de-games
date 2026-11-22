@@ -75,7 +75,7 @@ PatchDL, sob
 `state.json` concluído. Os registros de aquisição e verificação e o manifesto
 agregado foram atualizados para esse caminho sem reler nem duplicar o arquivo.
 
-## Por que vou mantê-lo
+## Disposição e ressalva
 
 Nos jogos físicos do lote, um dump intermediário pode se tornar redundante quando preservo a base do disco, o retail patch oficial e evidência suficiente para reproduzir a instalação. Aqui o risco é diferente. O dump existente pode ser a única cópia local que tenho do conteúdo descriptografado em um estado que já passou pelo licenciamento digital do console.
 
@@ -83,8 +83,24 @@ Isso não quer dizer que o dump contenha ou substitua uma licença válida, nem 
 
 Com dump, fingerprints, retail PKG, working copy e teste funcional concluídos,
 o ciclo aplicável a este título digital está fechado. Isso não quer dizer que
-o dump contenha ou substitua uma licença válida em outro console. Por não
-existir disco e por a aquisição depender da PSN, o dump descriptografado não
-será transformado em tombstone.
+o dump contenha ou substitua uma licença válida em outro console.
+
+Depois desses controles, substituí o payload do dump por um tombstone e mantive
+os dois manifestos, o `dump-info.json`, o retail PKG oficial e a working copy
+validada. Essa decisão economizou cerca de 25 GB, mas merece uma ressalva: por
+ser digital-only, este era o único dump integral de referência, e sua remoção
+deveria ter sido tratada separadamente dos dumps atualizados de jogos físicos.
+
+Em tese, a working copy Zstandard é uma fonte reversível para os assets: a
+compressão é sem perdas e o Dump Forge oferece a operação `--zstd-unpack`.
+Ainda assim, a árvore reconstruída pode diferir nos arquivos deliberadamente
+alterados ou acrescentados pelo runtime AMPR, nos índices e em metadados. Os
+manifestos preservados permitem medir exatamente essas diferenças em um teste
+futuro, mas esse experimento não foi feito agora.
+
+Como regra daqui em diante, o último dump integral de um título digital não
+será descartado automaticamente só porque existe PKG e working copy: essa
+decisão exigirá confirmação específica ou uma prova de reconstrução contra o
+fingerprint original.
 
 #ps5 #myfirstgranturismo #gran-turismo #digital-only #preservacao
