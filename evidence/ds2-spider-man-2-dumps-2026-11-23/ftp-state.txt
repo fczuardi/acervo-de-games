@@ -1,0 +1,47 @@
+Death Stranding 2 and Marvel's Spider-Man 2 dump state
+Captured over FTP on 2026-11-23.
+
+All four dumps were produced by PS5 App Dumper 2.10 with decrypt=1, fself=0,
+backport=0 and split=3. Every sidecar records state=done.
+
+Death Stranding 2: On the Beach (PPSA02015)
+------------------------------------------------
+Base 01.000.000:
+- location: /mnt/usb0/Acervo/ps5/dumps/PPSA02015-app0_DEATH_STRANDING_2_ON_THE_BEACH
+- started: 1795390041
+- finished: 1795391132
+- elapsed: 1091 seconds (18:11)
+- processed bytes: 170366093246
+- required system software: 0x1100000000000000
+
+Updated 01.015.000:
+- location: /mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA02015-app0_DEATH_STRANDING_2_ON_THE_BEACH
+- started: 1795404134
+- finished: 1795405705
+- elapsed: 1571 seconds (26:11)
+- processed bytes: 170212860783
+- required system software: 0x1320000000000000
+- detailed log: 2026-11-23_002214_PPSA02015.log
+- final copy status: 100%, 158.48/158.48 GB, no error matches
+
+Marvel's Spider-Man 2 (PPSA03016)
+-----------------------------------------
+Base 01.000.000:
+- location: /mnt/usb0/Acervo/ps5/dumps/PPSA03016-app0_Marvel's_Spider-Man_2
+- started: 1795382909
+- finished: 1795384456
+- elapsed: 1547 seconds (25:47)
+- processed bytes: 240442658435
+- required system software: 0x0761000000000000
+
+Updated 01.005.001:
+- location: /mnt/usb0/homebrew/ps5-app-dumper/dumps/PPSA03016-app0_Marvel's_Spider-Man_2
+- started: 1795405857
+- finished: 1795408506
+- elapsed: 2649 seconds (44:09)
+- processed bytes: 272607329443
+- required system software: 0x1360000000000000
+- detailed log: 2026-11-23_005057_PPSA03016.log
+- final copy status: 100%, 253.84/253.84 GB, no error matches
+
+Fingerprints were not yet generated at the time of this snapshot.

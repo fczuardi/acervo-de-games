@@ -56,6 +56,20 @@ def parse_arguments() -> argparse.Namespace:
 def main() -> None:
     args = parse_arguments()
 
+    if not args.package.is_file():
+        organized_packages = sorted(
+            path
+            for path in args.manifest.parent.glob("PPSA*/*.pkg")
+            if path.is_file()
+        )
+        if len(organized_packages) != 1:
+            fail(
+                f"retail PKG is missing at {args.package}; expected exactly one "
+                f"organized PPSA*/*.pkg candidate, found {len(organized_packages)}"
+            )
+        args.package = organized_packages[0]
+        print(f"using organized retail PKG: {args.package}", file=sys.stderr)
+
     with args.manifest.open("rb") as stream:
         manifest_bytes = stream.read()
     manifest_sha256 = hashlib.sha256(manifest_bytes).hexdigest()
@@ -141,6 +155,10 @@ def main() -> None:
     report_content = "".join(rows)
     report_sha256 = hashlib.sha256(report_content.encode("utf-8")).hexdigest()
     verified_at = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+    try:
+        package_filename = args.package.relative_to(args.manifest.parent).as_posix()
+    except ValueError:
+        package_filename = args.package.name
     summary = {
         "recordVersion": 1,
         "verifiedAt": verified_at,
@@ -150,7 +168,7 @@ def main() -> None:
             "sha256": manifest_sha256,
         },
         "assembledRetailPackage": {
-            "filename": args.package.name,
+            "filename": package_filename,
             "size": package_size,
             "sha256": package_hash.hexdigest(),
         },

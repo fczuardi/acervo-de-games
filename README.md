@@ -34,7 +34,11 @@ Para calcular o SHA-256 completo de um retail PKG e verificar todas as partes de
 just verify-patch "/caminho/da/pasta-do-jogo" nome-base-do-patch
 ```
 
-O comando espera arquivos chamados `nome-base-do-patch.json` e `nome-base-do-patch.pkg`. Se o tamanho, o layout ou qualquer hash de parte divergir, ele termina sem gravar resultados. Quando tudo confere, cria:
+O comando espera o manifesto `nome-base-do-patch.json` e aceita o PKG tanto
+como `nome-base-do-patch.pkg` na raiz quanto já organizado no formato
+`PPSAxxxxx/CONTENT_ID.pkg` do PatchDL. Se o tamanho, o layout ou qualquer hash
+de parte divergir, ele termina sem gravar resultados. Quando tudo confere,
+cria:
 
 - `nome-base-do-patch.pieces.sha256.tsv`;
 - `nome-base-do-patch.verification.json`;
